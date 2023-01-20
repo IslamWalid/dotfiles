@@ -1,0 +1,138 @@
+###################################
+# Windows & Workspaces management #
+###################################
+
+# Change focused window
+super + {h, j, k, l}
+	i3-msg focus {left, down, up, right}
+
+# Move focused window
+super + shift + {h, j, k, l}
+	i3-msg move {left, down, up, right}
+
+# Resize
+super + ctrl + {h, j, k, l}
+    i3-msg resize grow {left, down, up, right} 10
+super + shift + ctrl + {h, j, k, l}
+    i3-msg resize shrink {right, up, down, left} 10
+
+# Window fullscreen mode
+super + f
+	i3-msg fullscreen toggle
+
+# Workspace fullscreen mode
+super + shift + f
+    ~/.scripts/workspace_fullscreen.sh
+
+# Floating window toggle
+super + shift + space
+	i3-msg floating toggle
+
+# Move to scratchpad
+super + shift + p
+    i3-msg move scratchpad
+
+# Scratchpad show/hide toggle
+super + p
+    i3-msg scratchpad show
+
+# Close focused window
+super + q
+	i3-msg kill
+
+# Workspace navigation
+super + {comma, period, Tab}
+    i3-msg workspace {prev, next, back_and_forth}
+
+# Frequent app workspace handler
+super + {w, t, r, s, a, d, c}
+    ~/.scripts/app_handler.sh {firefox, telegram, ranger, spotify, anghami, discord, code} 
+
+# i3-modes
+super + shift + t
+    i3-msg mode 'Transfer'
+
+# Toggle workspace layout
+super + grave
+    ~/.scripts/container_layout.sh
+  
+# Power menu
+super + shift + x
+    ~/.scripts/power.sh
+
+#############
+# Utilities #
+#############
+
+# Restart i3
+super + ctrl + r
+	i3-msg restart
+
+# Reload sxhkdrc
+super + shift + r
+    killall -SIGUSR1 sxhkd
+
+# Screen lock
+super + x
+    i3lock -i /home/islam/Pictures/wallpapers/png/city.png
+
+# Run dmenu
+Menu
+	dmenu_run
+
+# Run terminal
+super + Return
+	i3-msg exec kitty
+
+# Mount usb drives
+super + m
+    ~/.scripts/mount.sh
+
+# Change keyboard layout
+super + space
+    ~/.scripts/language.sh
+
+# Toggle touchpad enable
+Scroll_Lock
+    ~/.scripts/touchpad_toggle.sh
+
+# Control volume
+super + {minus, equal, BackSpace}
+	~/.scripts/volume.sh    {lower, higher, toggle}
+
+# Control mic
+super + shift + {minus, equal, BackSpace}
+	~/.scripts/mic.sh    {lower, higher, toggle}
+
+# Take a screenshot of the entire screen and copy it to the clipboard
+Insert
+	maim -u | xclip -selection clipboard -t image/png
+
+# Take a screenshot of the entire screen and copy it to the clipboard then save it
+ctrl + Insert
+	maim -u | tee ~/Pictures/screen-shots/$(date '+%F-%T').png | xclip -selection clipboard -t image/png
+
+# Take a screenshot of the selected portion of the screen and copy it to the clipboard
+alt + Insert
+	maim -s | xclip -selection clipboard -t image/png
+
+# Take a screenshot of the selected portion of the screen and copy it to the clipboard then save it 
+alt + ctrl + Insert
+	maim -s | tee ~/Pictures/screen-shots/$(date '+%F-%T').png | xclip -selection clipboard -t image/png
+
+
+#################
+# Function Keys #
+#################
+# control brightness
+{XF86MonBrightnessDown, XF86MonBrightnessUp}
+    ~/.scripts/brightness.sh    {lower, higher}
+
+{XF86AudioLowerVolume, XF86AudioRaiseVolume, XF86AudioMute}
+    ~/.scripts/volume.sh        {lower, higher, toggle}
+
+XF86Sleep
+    ~/.scripts/power.sh Sleep
+
+XF86HomePage
+    firefox

@@ -1,0 +1,38 @@
+# ls
+alias ls='exa -g --git --group-directories-first --color=auto'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ll -la'
+
+# grep
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+
+# nvim aliases
+alias vi='nvim'
+alias vim='nvim'
+alias sudo='sudo '
+alias q='exit'
+
+# pacman
+alias i='sudo pacman -Sy'
+alias r='sudo pacman -Rns'
+alias pc='sudo pacman -Sc'  # clean cache
+alias u='sudo pacman -Syu'  # sync database and update
+alias s='sudo pacman -Ss'
+alias pl='pacman -Qq'       # list installed packages
+alias pll='pacman -Qi'      # list installed packages with details
+alias yl='pacman -Qm'       # list foreign packages
+alias yll='pacman -Qmi'     # list foreign packages with details
+
+# yay
+alias yi='yay -S'
+alias yr='yay -Rns'
+alias yc='yay -c'
+alias yu='yay'              # sync database and update both pacman and yay packages
+alias ys='yay -Ss'
+
+# misc
+alias rmdir='rm -rf'
+alias vvim='cd ~/.config/nvim; nvim .'

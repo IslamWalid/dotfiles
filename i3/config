@@ -1,0 +1,98 @@
+# super
+set $super Mod4
+
+font pango: 0
+
+exec nm-applet
+exec picom
+exec sxhkd
+exec feh --bg-center /home/islam/Pictures/wallpapers/jpg/city.jpg
+
+# options
+floating_modifier $super
+workspace_auto_back_and_forth no
+
+# gaps
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders smart
+gaps inner 5
+gaps outer 2
+
+# variables for each workspace
+set $terminal "1"
+set $ranger "2"
+set $firefox "3"
+set $telegram "4"
+set $code "5"
+set $music "6"
+set $discord "7"
+set $watch "8"
+set $pdf "9"
+set $ws3 "10"
+set $ws4 "11"
+set $ws5 "12"
+
+# switch to workspace
+bindsym $super+1 workspace $terminal
+bindsym $super+2 workspace $watch
+bindsym $super+3 workspace $pdf
+bindsym $super+4 workspace $ws3
+bindsym $super+5 workspace $ws4
+bindsym $super+6 workspace $ws5
+
+# move focused container to workspace
+bindsym $super+Shift+1 move container to workspace $terminal
+bindsym $super+Shift+2 move container to workspace $watch
+bindsym $super+Shift+3 move container to workspace $pdf
+bindsym $super+Shift+4 move container to workspace $ws3
+bindsym $super+Shift+5 move container to workspace $ws4
+bindsym $super+Shift+6 move container to workspace $ws5
+
+# default workspaces
+assign [class="mpv"] $watch
+assign [class="syncplay"] $watch
+assign [class="firefox"] $firefox
+assign [class="TelegramDesktop"] $telegram
+assign [class="discord"] $discord
+assign [class="okular"] $pdf
+assign [class="anghami"] $music
+assign [class="ranger"] $ranger
+
+for_window [instance="spotify"] move to workspace $music
+
+# floating windows
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qBittorrent"] floating enable
+
+# i3block
+bar {
+    status_command i3blocks
+    i3bar_command i3bar --transparency
+    font pango: i3bar 12
+    position top
+    strip_workspace_numbers yes
+    workspace_min_width 30
+
+    colors {
+        background  #17171780
+        separator   #757575FF
+
+        #                   border      background   text
+        focused_workspace   #17171780   #17171780    #FFFFFFFF
+        inactive_workspace  #17171780   #17171780    #70707033
+        urgent_workspace    #17171780   #17171780    #C40808FF
+        binding_mode        #17171780   #17171780    #FFFFFFFF
+	}
+}
+
+mode "Transfer" {
+    bindsym w exec ~/.scripts/app_handler.sh "mt_firefox";     mode "default"
+    bindsym t exec ~/.scripts/app_handler.sh "mt_telegram";    mode "default"
+    bindsym r exec ~/.scripts/app_handler.sh "mt_ranger";      mode "default"
+    bindsym s exec ~/.scripts/app_handler.sh "mt_music";       mode "default"
+    bindsym a exec ~/.scripts/app_handler.sh "mt_music";       mode "default"
+    bindsym d exec ~/.scripts/app_handler.sh "mt_discord";     mode "default"
+    bindsym c exec ~/.scripts/app_handler.sh "mt_code";        mode "default"
+    bindsym Escape mode "default";
+}
