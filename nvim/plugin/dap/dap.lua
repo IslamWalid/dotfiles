@@ -2,14 +2,8 @@ local dap = require("dap")
 local dapui = require("dapui")
 
 -- Config --
-vim.fn.sign_define(
-	"DapBreakpoint",
-	{ text = "●", texthl = "", linehl = "debugBreakpoint", numhl = "debugBreakpoint" }
-)
-vim.fn.sign_define(
-	"DapBreakpointCondition",
-	{ text = "◆", texthl = "", linehl = "debugBreakpoint", numhl = "debugBreakpoint" }
-)
+vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "", linehl = "", numhl = "debugBreakpoint" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "◆", texthl = "", linehl = "", numhl = "debugBreakpoint" })
 vim.fn.sign_define("DapStopped", { text = "▶", texthl = "", linehl = "debugPC", numhl = "debugPC" })
 
 -- Functions
