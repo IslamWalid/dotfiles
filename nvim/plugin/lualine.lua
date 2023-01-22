@@ -1,3 +1,8 @@
+local filename = function ()
+    local fname = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
+    return fname .. " %m"
+end
+
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -11,7 +16,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
+		lualine_c = { filename },
 		lualine_x = { "progress" },
 		lualine_y = { "filetype" },
 		lualine_z = { "location" },
