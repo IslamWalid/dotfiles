@@ -1,6 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -25,8 +26,7 @@ cmp.setup({
 		end,
 	},
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp_signature_help" },
-        { name = "luasnip", keyword_length = 2 },
+		{ name = "luasnip", keyword_length = 2 },
 		{ name = "nvim_lsp", keyword_length = 2 },
 		{ name = "buffer", keyword_length = 5 },
 		{ name = "path" },
@@ -78,3 +78,5 @@ cmp.setup({
 		ghost_text = true,
 	},
 })
+
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
