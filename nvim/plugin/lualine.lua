@@ -1,6 +1,10 @@
-local filename = function ()
-    local fname = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
-    return fname .. " %m"
+local filename = function()
+	local fname = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
+	return fname .. " %m"
+end
+
+local function session_recording()
+	return vim.call("ObsessionStatus", " ")
 end
 
 require("lualine").setup({
@@ -25,18 +29,14 @@ require("lualine").setup({
 		lualine_a = {
 			{
 				"buffers",
-				symbols = {
-					modified = " ●",
-					alternate_file = "",
-					directory = "",
-				},
+				symbols = { modified = " ●", alternate_file = "", directory = "" },
 			},
 		},
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = {},
+		lualine_z = { session_recording },
 	},
 	extensions = { "fugitive", "man", "nvim-dap-ui", "nvim-tree", "quickfix", "toggleterm" },
 })

@@ -68,7 +68,7 @@ require("lazy").setup({
 	"kyazdani42/nvim-web-devicons",
 	"nvim-lualine/lualine.nvim",
 	"sainnhe/gruvbox-material",
-    { "catppuccin/nvim", name = "catppuccin" },
+	{ "catppuccin/nvim", name = "catppuccin" },
 
 	-- Pacman
 	{
@@ -89,6 +89,7 @@ require("lazy").setup({
 	"tpope/vim-eunuch",
 	"tpope/vim-repeat",
 	"tpope/vim-surround",
+	"tpope/vim-obsession",
 	"lilydjwg/colorizer",
 	"akinsho/toggleterm.nvim",
 	"farmergreg/vim-lastplace",
