@@ -25,29 +25,32 @@ set $ranger "2"
 set $firefox "3"
 set $telegram "4"
 set $code "5"
-set $music "6"
-set $discord "7"
-set $watch "8"
-set $pdf "9"
-set $ws3 "10"
-set $ws4 "11"
-set $ws5 "12"
+set $devtools "6"
+set $music "7"
+set $discord "8"
+set $watch "9"
+set $pdf "10"
+set $tmp1 "11"
+set $tmp2 "12"
+set $tmp3 "13"
 
 # switch to workspace
 bindsym $super+1 workspace $terminal
-bindsym $super+2 workspace $watch
-bindsym $super+3 workspace $pdf
-bindsym $super+4 workspace $ws3
-bindsym $super+5 workspace $ws4
-bindsym $super+6 workspace $ws5
+bindsym $super+2 workspace $devtools
+bindsym $super+3 workspace $watch
+bindsym $super+4 workspace $pdf
+bindsym $super+5 workspace $tmp1
+bindsym $super+6 workspace $tmp2
+bindsym $super+7 workspace $tmp3
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace $terminal
-bindsym $super+Shift+2 move container to workspace $watch
-bindsym $super+Shift+3 move container to workspace $pdf
-bindsym $super+Shift+4 move container to workspace $ws3
-bindsym $super+Shift+5 move container to workspace $ws4
-bindsym $super+Shift+6 move container to workspace $ws5
+bindsym $super+Shift+2 move container to workspace $devtools
+bindsym $super+Shift+3 move container to workspace $watch
+bindsym $super+Shift+4 move container to workspace $pdf
+bindsym $super+Shift+5 move container to workspace $tmp1
+bindsym $super+Shift+6 move container to workspace $tmp2
+bindsym $super+Shift+7 move container to workspace $tmp3
 
 # default workspaces
 assign [class="mpv"] $watch
@@ -58,6 +61,8 @@ assign [class="discord"] $discord
 assign [class="okular"] $pdf
 assign [class="anghami"] $music
 assign [class="ranger"] $ranger
+assign [class="Postman"] $devtools
+assign [class="beekeeper-studio"] $devtools
 
 for_window [instance="spotify"] move to workspace $music
 
