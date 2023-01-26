@@ -3,10 +3,6 @@ local filename = function()
 	return fname .. " %m"
 end
 
-local function session_recording()
-	return vim.call("ObsessionStatus", " ")
-end
-
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -36,7 +32,7 @@ require("lualine").setup({
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
-		lualine_z = { session_recording },
+		lualine_z = {},
 	},
 	extensions = { "fugitive", "man", "nvim-dap-ui", "nvim-tree", "quickfix", "toggleterm" },
 })
