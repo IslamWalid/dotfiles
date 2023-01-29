@@ -92,6 +92,14 @@ return require("packer").startup(function(use)
 	use("CRAG666/code_runner.nvim")
 	use("vim-scripts/ReplaceWithRegister")
 	use({
+		"lukas-reineke/indent-blankline.nvim",
+        config = function ()
+            require("indent_blankline").setup({
+                char = "┊",
+            })
+        end
+	})
+	use({
 		"tpope/vim-fugitive",
 		config = function()
 			vim.keymap.set("n", "gG", function()
