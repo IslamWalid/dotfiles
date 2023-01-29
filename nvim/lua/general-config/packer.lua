@@ -19,16 +19,27 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- Autocompletion
+	-- Completion
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-nvim-lsp")
-	use("saadparwaiz1/cmp_luasnip")
-
-	-- Snippets
-	use("L3MON4D3/LuaSnip")
-	use("rafamadriz/friendly-snippets")
+	use({
+		"quangnguyen30192/cmp-nvim-ultisnips",
+		config = function()
+			require("cmp_nvim_ultisnips").setup({
+				filetype_source = "treesitter",
+				show_snippets = "all",
+				documentation = require("cmp_nvim_ultisnips.snippets").documentation,
+			})
+		end,
+	})
+	use({
+		"SirVer/ultisnips",
+		config = function()
+			vim.g.UltiSnipsSnippetDirectories = { vim.fn.stdpath("config") .. "/ultisnips" }
+		end,
+	})
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })

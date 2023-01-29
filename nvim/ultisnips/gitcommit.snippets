@@ -1,0 +1,54 @@
+snippet cc "Generic commit" b
+${1:type}(${2:scope}): ${3:title}
+$0
+endsnippet
+
+snippet fix "Fix bug" b
+fix(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet feat "New feature" b
+feat(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet build "Build related change" b
+build(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet chore "Code change that external user won't see (eg: change to .gitignore file or .eslintrc)" b
+chore(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet ci "CI/CD related change" b
+ci(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet docs "Documentation related changes" b
+docs(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet style "Code related to styling" b
+style(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet ref "Refactor related changes" b
+refactor(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet perf "Code that improves performance" b
+perf(${1:scope}): ${2:title}
+$0
+endsnippet
+
+snippet test "Adding new test or making changes to existing test" b
+test(${1:scope}): ${2:title}
+$0
+endsnippet

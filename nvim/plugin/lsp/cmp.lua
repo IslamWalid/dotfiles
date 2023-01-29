@@ -1,7 +1,7 @@
 local cmp = require("cmp")
-local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
 local has_words_before = function()
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -22,11 +22,11 @@ cmp.setup({
 	},
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body)
+			vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
 	sources = cmp.config.sources({
-		{ name = "luasnip", keyword_length = 2 },
+		{ name = "ultisnips", keyword_length = 2 },
 		{ name = "nvim_lsp", keyword_length = 2 },
 		{ name = "buffer", keyword_length = 5 },
 		{ name = "path" },
@@ -63,15 +63,11 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
-		["<C-j>"] = cmp.mapping(function()
-			if luasnip.jumpable(1) then
-				luasnip.jump(1)
-			end
+		["<C-j>"] = cmp.mapping(function(fallback)
+			cmp_ultisnips_mappings.jump_forwards(fallback)
 		end, { "i", "s" }),
-		["<C-k>"] = cmp.mapping(function()
-			if luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			end
+		["<C-k>"] = cmp.mapping(function(fallback)
+			cmp_ultisnips_mappings.jump_backwards(fallback)
 		end, { "i", "s" }),
 	}),
 	experimental = {

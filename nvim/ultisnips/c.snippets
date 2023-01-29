@@ -1,0 +1,146 @@
+snippet cst "starter template for small C programs" b
+#include <stdlib.h>
+#include <stdio.h>
+
+int
+main(${1:void})
+{
+	$0
+	return 0;
+}
+endsnippet
+
+snippet main "C main function" b
+int
+main(${1:void})
+{
+	$0
+	return 0;
+}
+endsnippet
+
+snippet if "if statement" b
+if (${1:true}) {
+	$0
+}
+endsnippet
+
+snippet elif "else if statement" w
+else if (${1:true}) {
+	$0
+}
+endsnippet
+
+snippet else "else statement" w
+else {
+	$0
+}
+endsnippet
+
+snippet switch "switch case statement" b
+switch (${1:switch_on}) {
+	case ${2:value}:
+		$0
+		break;
+}
+endsnippet
+
+snippet case "case statement" b
+case ${1:value}:
+	$0
+	break;
+endsnippet
+
+snippet for "for loop" b
+for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:count}; $2++) {
+	$0
+}
+endsnippet
+
+snippet forr "reversed for loop" b
+for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; --$2) {
+	$0
+}
+endsnippet
+
+snippet while "while loop" b
+while (${1:true}) {
+	$0
+}
+endsnippet
+
+snippet dowhile "do-while loop" b
+do {
+	$0
+} while(${1:false});
+endsnippet
+
+snippet func "function declaration" b
+${2:int}
+${1:func}(${3:void})
+{
+	$0
+}
+endsnippet
+
+snippet tys "struct declaration" b
+typedef struct ${1:name} {
+	$2
+} $0;
+endsnippet
+
+snippet tye "enum declaration" b
+typedef enum ${1:name} {
+	$2
+} $0;
+endsnippet
+
+snippet printf "printf statement" b
+printf("$1\n"$2);$0
+endsnippet
+
+snippet sprintf "printf statement" b
+sprintf($1, "$2\n"$3);$0
+endsnippet
+
+snippet fprintf "fprintf statement" b
+fprintf(${1:stderr}, "$2\n"$3);$0
+endsnippet
+
+snippet scanf "scanf statement" b
+scanf("$1", $2);$0
+endsnippet
+
+snippet sscanf "sscanf statement" b
+sscanf($1, "$2", $3);$0
+endsnippet
+
+snippet fscanf "fscanf statement" b
+fscanf($1, "$2", $3);$0
+endsnippet
+
+snippet mal "memory allocation statement" b
+${1:int} *${2:ptr} = ${3:malloc}(sizeof($1));
+endsnippet
+
+snippet #def "define macro statement" b
+#define ${1:MACRO} ${2:VALUE}
+endsnippet
+
+snippet #if "#if statement" b
+#if ${1:0}
+$0
+#endif /* if $1 */
+endsnippet
+
+snippet #ifdef "#ifdef statement" b
+#ifdef ${1:DEBUG}
+$0
+#endif /* ifdef $1 */
+endsnippet
+
+snippet #ifndef "#ifndef statement" b
+#ifndef ${1:DEBUG}
+$0
+#endif /* ifndef $1 */
+endsnippet

@@ -1,0 +1,249 @@
+snippet req "require" w
+require('${1:module}');$0
+endsnippet
+
+snippet creq "CommonJS require" b
+const ${1:name} = require('${1:module}');$0
+endsnippet
+
+snippet mexp "module exports" b
+module.exports = ${1:name};
+endsnippet
+
+snippet if "if statement" b
+if (${1:condition}) {
+	$2
+}
+endsnippet
+
+snippet elif "else if statement" w
+else if (${1:condition}) {
+	$2
+}
+endsnippet
+
+snippet else "else statement" w
+else {
+	$0
+}
+endsnippet
+
+snippet switch "switch case statement" b
+switch (${1:key}) {
+	case ${2:value}:
+		$0
+		break;
+
+	default:
+		break;
+}
+endsnippet
+
+snippet case "case statement" b
+case ${1:value}:
+	$0
+	break;
+endsnippet
+
+snippet trycatch "try catch block" b
+try {
+	$2
+} catch (${1:err}) {
+	$0	
+}
+endsnippet
+
+snippet for "for loop over array" b
+for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {
+	$0
+}
+endsnippet
+
+snippet forof "for-of loop" b
+for (const ${1:iterator} of ${2:object}) {
+	$0
+}
+endsnippet
+
+snippet forin "for-in loop" b
+for (const ${1:key} in ${2:object}) {
+	if (${2:object}.hasOwnProperty(${1:key})) {
+		const ${3:element} = ${2:object}[${1:key}];
+		$0
+	}
+}
+endsnippet
+
+snippet while "while loop" b
+while (${1:condition}) {
+	$0
+}
+endsnippet
+
+snippet dowhile "do-while loop" b
+do {
+	$0
+} while (${1:condition});
+endsnippet
+
+snippet func "function definition" b
+function ${1:name} (${2:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet afunc "asynchronous function definition" b
+async function ${1:name} (${2:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet efunc "function expression statement" w
+function (${1:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet eafunc "asynchronous function expression statement" w
+async function (${1:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet arrow "arrow function statement" w
+(${1:arguments}) => {
+	${0}
+}
+endsnippet
+
+snippet aarrow "asynchronous arrow function statement" w
+async (${1:arguments}) => {
+	${0}
+}
+endsnippet
+
+snippet imfunc "immediately invoked function expression" b
+;((${1:arguments}) => {
+	${0}
+})(${2})
+endsnippet
+
+snippet imafunc "immediately invoked asynchronous function expression" b
+;(async (${1:arguments}) => {
+	${0}
+})(${2})
+endsnippet
+
+snippet class "class definition" b
+class ${1:name} {
+	$0
+}
+endsnippet
+
+snippet clex "class definition with extends statement" b
+class ${1:name} extends ${2:base} {
+	$0
+}
+endsnippet
+
+snippet new "new statement" b
+const ${1:name} = new ${2:type}(${3:arguments});$0
+endsnippet
+
+snippet constructor "constructor definition" b
+constructor (${1:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet meth "method definition" b
+${1:method} (${2:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet ameth "asynchronous method definition" b
+async ${1:method} (${2:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet smeth "static method definition" b
+static ${1:method} (${2:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet sameth "static asynchronous method definition" b
+static async ${1:method} (${2:arguments}) {
+	${0}
+}
+endsnippet
+
+snippet clog "console.log() to stdout" b
+console.log(${0})
+endsnippet
+
+snippet cerror "console.error() to stderr" b
+console.error(${0})
+endsnippet
+
+snippet get "object get expression" b
+get ${1:property} () {
+	${0}
+}
+endsnippet
+
+snippet set "object set expression" b
+set ${1:property} (${2:value}) {
+	${0}
+}
+endsnippet
+
+snippet foreach "forEach function" b
+${1:array}.forEach(${2:element} => {
+	$0
+});
+endsnippet
+
+snippet map "map function" b
+const ${1:result} = ${2:iterable}.map((${3:item}) => {
+	${0}
+});
+endsnippet
+
+snippet every "every function" b
+const ${1:result} = ${2:iterable}.every((${3:item}) => {
+	${0}
+});
+endsnippet
+
+snippet some "some function" b
+const ${1:result} = ${2:iterable}.some((${3:item}) => {
+	${0}
+});
+endsnippet
+
+snippet find "find function" b
+const ${1:result} = ${2:iterable}.find((${3:item}) => {
+	${0}
+});
+endsnippet
+
+snippet filter "filter function" b
+const ${1:result} = ${2:iterable}.filter((${3:item}) => {
+	${0}
+});
+endsnippet
+
+snippet reduce "reduce function" b
+const ${1:result} = ${2:iterable}.reduce((${3:previous}, ${4:current}) => {
+	${0}
+}, ${5:initial})
+endsnippet
+
+snippet desc "" b
+describe('${1:description}', () => {
+	${0}
+})
+endsnippet
