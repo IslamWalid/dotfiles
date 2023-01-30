@@ -13,5 +13,26 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			program = "${file}",
 			cwd = "${workspaceFolder}",
 		},
+		{
+			name = "attach process",
+			type = "pwa-node",
+			request = "attach",
+			processId = require("dap.utils").pick_process,
+			cwd = "${workspaceFolder}",
+		},
+		{
+			name = "debug jest tests",
+			type = "pwa-node",
+			request = "launch",
+			runtimeExecutable = "node",
+			runtimeArgs = {
+				"./node_modules/jest/bin/jest.js",
+				"--runInBand",
+			},
+			rootPath = "${workspaceFolder}",
+			cwd = "${workspaceFolder}",
+			console = "integratedTerminal",
+			internalConsoleOptions = "neverOpen",
+		},
 	}
 end
