@@ -15,13 +15,13 @@ dap.configurations.c = {
 		type = "codelldb",
 		request = "launch",
 		program = function()
-            local file_name = vim.fn.expand("%")
-            local filetype = vim.bo.filetype
-            if filetype == "c" then
-                os.execute(string.format("gcc -g %s -o debug", file_name))
-            elseif filetype == "cpp" then
-                os.execute(string.format("g++ -g %s -o debug", file_name))
-            end
+			local file_name = vim.fn.expand("%")
+			local filetype = vim.bo.filetype
+			if filetype == "c" then
+				os.execute(string.format("gcc -g %s -o debug", file_name))
+			elseif filetype == "cpp" then
+				os.execute(string.format("g++ -g %s -o debug", file_name))
+			end
 			return "debug"
 		end,
 		cwd = "${workspaceFolder}",

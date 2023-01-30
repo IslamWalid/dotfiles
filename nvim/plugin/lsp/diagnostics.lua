@@ -1,6 +1,6 @@
 local open_float_opts = {
 	border = "single",
-    scope = "line",
+	scope = "line",
 	source = "always",
 	severity_sort = true,
 	focus = false,

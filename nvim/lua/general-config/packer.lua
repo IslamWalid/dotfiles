@@ -8,7 +8,7 @@ return require("packer").startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jayp0521/mason-null-ls.nvim")
-    use("ray-x/lsp_signature.nvim")
+	use("ray-x/lsp_signature.nvim")
 	use({
 		"j-hui/fidget.nvim",
 		config = function()
@@ -51,6 +51,7 @@ return require("packer").startup(function(use)
 
 	-- Dap
 	use("mfussenegger/nvim-dap")
+	use("jay-babu/mason-nvim-dap.nvim")
 	use("rcarriga/nvim-dap-ui")
 	use("mxsdev/nvim-dap-vscode-js")
 
