@@ -3,7 +3,7 @@ require('${1:module}');$0
 endsnippet
 
 snippet creq "CommonJS require" b
-const ${1:name} = require('${1:module}');$0
+const ${1:name} = require('${2:module}');$0
 endsnippet
 
 snippet mexp "module exports" b
@@ -87,49 +87,37 @@ do {
 endsnippet
 
 snippet func "function definition" b
-function ${1:name} (${2:arguments}) {
-	${0}
-}
-endsnippet
-
-snippet afunc "asynchronous function definition" b
-async function ${1:name} (${2:arguments}) {
+${1:async }function ${2:name} ($3) {
 	${0}
 }
 endsnippet
 
 snippet efunc "function expression statement" w
-function (${1:arguments}) {
-	${0}
-}
-endsnippet
-
-snippet eafunc "asynchronous function expression statement" w
-async function (${1:arguments}) {
+${1:async }function ($2) {
 	${0}
 }
 endsnippet
 
 snippet arrow "arrow function statement" w
-(${1:arguments}) => {
+${1:async }($2) => {
 	${0}
 }
 endsnippet
 
-snippet aarrow "asynchronous arrow function statement" w
-async (${1:arguments}) => {
+snippet hand "http request handler" w
+${1:async }(req, res$2) => {
 	${0}
 }
 endsnippet
 
 snippet imfunc "immediately invoked function expression" b
-;((${1:arguments}) => {
+;(($1) => {
 	${0}
 })(${2})
 endsnippet
 
 snippet imafunc "immediately invoked asynchronous function expression" b
-;(async (${1:arguments}) => {
+;(async ($1) => {
 	${0}
 })(${2})
 endsnippet
@@ -140,7 +128,7 @@ class ${1:name} {
 }
 endsnippet
 
-snippet clex "class definition with extends statement" b
+snippet eclass "class definition with extends statement" b
 class ${1:name} extends ${2:base} {
 	$0
 }
@@ -181,11 +169,11 @@ static async ${1:method} (${2:arguments}) {
 endsnippet
 
 snippet clog "console.log() to stdout" b
-console.log(${0})
+console.log($1);$0
 endsnippet
 
-snippet cerror "console.error() to stderr" b
-console.error(${0})
+snippet cerr "console.error() to stderr" b
+console.error($1);$0
 endsnippet
 
 snippet get "object get expression" b
@@ -239,11 +227,63 @@ endsnippet
 snippet reduce "reduce function" b
 const ${1:result} = ${2:iterable}.reduce((${3:previous}, ${4:current}) => {
 	${0}
-}, ${5:initial})
+}, ${5:initial});
 endsnippet
 
-snippet desc "" b
+snippet desc "jest describe function" b
 describe('${1:description}', () => {
 	${0}
-})
+});
+endsnippet
+
+snippet it "jest it function" b
+it('${1:description}', ${2:async }() => {
+	${0}
+});
+endsnippet
+
+snippet itto "jest it.todo function" b
+it.todo('${1:description}');$0
+endsnippet
+
+snippet itdo "jest it with done callback" b
+it('${1:description}', (done) => {
+	${0}
+});
+endsnippet
+
+snippet bef "jest before function" b
+before(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet befa "jest beforeAll function" b
+beforeAll(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet befe "jest beforeEach function" b
+beforeEach(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet aft "jest after function" b
+after(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet afte "jest afterEach function" b
+afterEach(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet afta "jest afterAll function" b
+afterAll(${1:async }() => {
+	${0}
+});
 endsnippet
