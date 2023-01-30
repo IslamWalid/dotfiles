@@ -26,6 +26,8 @@ dapui.setup({
 	},
 })
 
+vim.keymap.set({ "n", "v" }, "<leader>i", dapui.eval)
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end

@@ -15,6 +15,7 @@ vim.fn.sign_define("DapStopped", { text = "▶", texthl = "", linehl = "debugPC"
 
 -- Mappings --
 vim.keymap.set("n", "<F5>", dap.continue)
+vim.keymap.set("n", "<F17>", dap.run_last)
 vim.keymap.set("n", "<F6>", dap.terminate)
 vim.keymap.set("n", "<F7>", dap.restart)
 vim.keymap.set("n", "<F8>", function()

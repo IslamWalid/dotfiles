@@ -4,35 +4,33 @@ require("dap-vscode-js").setup({
 	adapters = { "pwa-node" },
 })
 
-for _, language in ipairs({ "typescript", "javascript" }) do
-	require("dap").configurations[language] = {
-		{
-			name = "debug file",
-			type = "pwa-node",
-			request = "launch",
-			program = "${file}",
-			cwd = "${workspaceFolder}",
+require("dap").configurations.javascript = {
+	{
+		name = "debug file",
+		type = "pwa-node",
+		request = "launch",
+		program = "${file}",
+		cwd = "${workspaceFolder}",
+	},
+	{
+		name = "attach process",
+		type = "pwa-node",
+		request = "attach",
+		processId = require("dap.utils").pick_process,
+		cwd = "${workspaceFolder}",
+	},
+	{
+		name = "debug jest tests",
+		type = "pwa-node",
+		request = "launch",
+		runtimeExecutable = "node",
+		runtimeArgs = {
+			"./node_modules/jest/bin/jest.js",
+			"--runInBand",
 		},
-		{
-			name = "attach process",
-			type = "pwa-node",
-			request = "attach",
-			processId = require("dap.utils").pick_process,
-			cwd = "${workspaceFolder}",
-		},
-		{
-			name = "debug jest tests",
-			type = "pwa-node",
-			request = "launch",
-			runtimeExecutable = "node",
-			runtimeArgs = {
-				"./node_modules/jest/bin/jest.js",
-				"--runInBand",
-			},
-			rootPath = "${workspaceFolder}",
-			cwd = "${workspaceFolder}",
-			console = "integratedTerminal",
-			internalConsoleOptions = "neverOpen",
-		},
-	}
-end
+		rootPath = "${workspaceFolder}",
+		cwd = "${workspaceFolder}",
+		console = "integratedTerminal",
+		internalConsoleOptions = "neverOpen",
+	},
+}
