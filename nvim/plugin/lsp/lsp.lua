@@ -1,5 +1,6 @@
-local telescope_buitin = require("telescope.builtin")
 local lspconfig = require("lspconfig")
+local lsp_signature = require("lsp_signature")
+local telescope_buitin = require("telescope.builtin")
 
 local servers = {
 	"gopls",
@@ -13,6 +14,10 @@ local servers = {
 
 local on_attach = function(_, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
+
+	lsp_signature.on_attach({
+		hint_prefix = "",
+	}, bufnr)
 
 	-- LSP mappings
 	vim.keymap.set("n", "gK", vim.lsp.buf.hover, opts)
