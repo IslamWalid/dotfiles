@@ -1,15 +1,15 @@
 local builtin = require("telescope.builtin")
 
 require("telescope").setup({
-	defaults = {
-		layout_strategy = "horizontal",
-		layout_config = {
-			height = 0.9,
-			width = 0.9,
-			preview_width = 0.6,
-			scroll_speed = 1,
-		},
-	},
+  defaults = {
+    layout_strategy = "horizontal",
+    layout_config = {
+      height = 0.9,
+      width = 0.9,
+      preview_width = 0.6,
+      scroll_speed = 1,
+    },
+  },
 })
 
 vim.keymap.set("n", "<leader>fb", builtin.buffers)

@@ -1,11 +1,11 @@
 local dap = require("dap")
 
 require("mason-nvim-dap").setup({
-	ensure_installed = {
-		"delve",
-		"js-debug-adapter",
-		"codelldb",
-	},
+  ensure_installed = {
+    "delve",
+    "js-debug-adapter",
+    "codelldb",
+  },
 })
 
 -- Config --
@@ -19,7 +19,7 @@ vim.keymap.set("n", "<F17>", dap.run_last)
 vim.keymap.set("n", "<F6>", dap.terminate)
 vim.keymap.set("n", "<F7>", dap.restart)
 vim.keymap.set("n", "<F8>", function()
-	dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+  dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
 end)
 vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
 vim.keymap.set("n", "<F21>", dap.clear_breakpoints)
