@@ -111,15 +111,9 @@ ${1:async }(req, res$2) => {
 endsnippet
 
 snippet imfunc "immediately invoked function expression" b
-;(($1) => {
+(${1:async }($2) => {
 	${0}
-})(${2})
-endsnippet
-
-snippet imafunc "immediately invoked asynchronous function expression" b
-;(async ($1) => {
-	${0}
-})(${2})
+})(${3})
 endsnippet
 
 snippet class "class definition" b
