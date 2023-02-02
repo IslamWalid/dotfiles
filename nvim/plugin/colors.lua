@@ -23,7 +23,7 @@ require("catppuccin").setup({
   },
   styles = {
     comments = { "italic" },
-    conditionals = { "italic" },
+    conditionals = {},
     loops = {},
     functions = { "bold" },
     keywords = {},
@@ -39,10 +39,11 @@ require("catppuccin").setup({
   custom_highlights = {},
   integrations = {
     cmp = true,
-    gitsigns = true,
-    telescope = true,
-    fidget = true,
     mason = true,
+    fidget = false,
+    gitsigns = true,
+    nvimtree = false,
+    telescope = true,
     treesitter = true,
     treesitter_context = true,
     dap = {
