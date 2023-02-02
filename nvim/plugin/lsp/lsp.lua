@@ -12,7 +12,7 @@ local servers = {
   "jsonls",
 }
 
-local on_attach = function(_, bufnr)
+local function on_attach(_, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
   lsp_signature.on_attach({

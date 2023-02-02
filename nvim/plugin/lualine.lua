@@ -1,4 +1,4 @@
-local filename = function()
+local function filename()
   local fname = vim.fn.fnamemodify(vim.fn.expand("%"), ":~:.")
   return fname .. " %m"
 end
