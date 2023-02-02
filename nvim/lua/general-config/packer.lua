@@ -38,8 +38,7 @@ return require("packer").startup(function(use)
   use({
     "SirVer/ultisnips",
     config = function()
-      vim.g.UltiSnipsSnippetDirectories =
-        { vim.fn.stdpath("config") .. "/ultisnips" }
+      vim.g.UltiSnipsSnippetDirectories = { vim.fn.stdpath("config") .. "/ultisnips" }
     end,
   })
 

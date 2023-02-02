@@ -1,5 +1,5 @@
 local open_float_opts = {
-  border = "rounded",
+  border = "none",
   scope = "line",
   source = "always",
   severity_sort = true,
