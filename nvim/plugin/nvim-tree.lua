@@ -1,4 +1,18 @@
-require("nvim-tree").setup({
+local api = require("nvim-tree.api")
+local nvim_tree = require("nvim-tree")
+
+local function open_nvim_tree(data)
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  if not directory then
+    return
+  end
+
+  vim.cmd.cd(data.file)
+  api.tree.open()
+end
+
+nvim_tree.setup({
   auto_reload_on_write = true,
   sort_by = "name",
   view = {
@@ -90,8 +104,9 @@ require("nvim-tree").setup({
   },
 })
 
-local api = require("nvim-tree.api")
 vim.keymap.set("n", "<leader>fe", function()
   api.tree.toggle()
   api.tree.reload()
 end)
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
