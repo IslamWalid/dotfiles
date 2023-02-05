@@ -52,7 +52,7 @@ func main() {
 }
 endsnippet
 
-snippet fmain "main function" b
+snippet main "main function" b
 func main() {
 	$1
 }
@@ -103,7 +103,7 @@ endsnippet
 
 snippet sel "Snippet for select statement"
 select {
-case ${1:condition}:
+case ${1:condition}
 	$0
 }
 endsnippet
@@ -113,7 +113,7 @@ case ${1:condition}:$0
 endsnippet
 
 snippet for "Pure for loop" b
-for ${1}{
+for ${1:condition} {
 	$0
 }
 endsnippet
