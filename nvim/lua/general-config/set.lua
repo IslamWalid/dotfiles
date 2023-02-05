@@ -16,6 +16,7 @@ vim.opt.undofile = true
 vim.opt.wrap = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.signcolumn = "yes"
 vim.opt.encoding = "utf8"
 vim.opt.scrolloff = 5
 vim.opt.mouse = "a"
