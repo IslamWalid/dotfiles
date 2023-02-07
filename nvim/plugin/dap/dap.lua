@@ -1,4 +1,10 @@
 local dap = require("dap")
+local dapui = require("dapui")
+
+local function after_session()
+  dapui.close()
+  dap.repl.close()
+end
 
 require("mason-nvim-dap").setup({
   ensure_installed = {
@@ -27,3 +33,9 @@ vim.keymap.set("n", "<F10>", dap.step_over)
 vim.keymap.set("n", "<F22>", dap.run_to_cursor)
 vim.keymap.set("n", "<F11>", dap.step_into)
 vim.keymap.set("n", "<F12>", dap.step_out)
+
+-- Listeners --
+dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+dap.listeners.after.event_terminated["dapui_config"] = after_session
+dap.listeners.after.event_exited["dapui_config"] = after_session
+dap.listeners.after.disconnect["dapui_config"] = after_session
