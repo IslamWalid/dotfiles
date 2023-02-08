@@ -1,0 +1,59 @@
+" Options
+let mapleader = " "
+set clipboard="unnamedplus"
+set hlsearch=off
+set incsearch=on
+set number
+set relativenumber
+set scrolloff=5
+set ideajoin
+
+" Plugins
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-entire'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
+
+" LSP
+nmap gK <Action>(QuickJavaDoc)
+nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gt <Action>(GotoTypeDeclaration)
+nmap ga <Action>(ShowIntentionActions)
+nmap grf <Action>(FindUsages)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>fm <Action>(ReformatCode)
+
+" Run and Debug
+nmap <F4> <Action>(Run)
+nmap <F6> <Action>(Stop)
+nmap <F5> <Action>(Debug)
+nmap <F17> <Action>(Resume)
+nmap <F7> <Action>(Rerun)
+nmap <F8> <Action>(AddConditionalBreakpoint)
+nmap <F9> <Action>(ToggleLineBreakpoint)
+nmap <F10> <Action>(StepOver)
+nmap <F11> <Action>(StepInto)
+nmap <F12> <Action>(StepOut)
+
+" Replace with register
+nmap grr <Plug>ReplaceWithRegisterLine==
+nmap gR <Plug>ReplaceWithRegisterOperator$
+
+" Moving lines
+nmap <leader>j <Action>(MoveLineDown)
+nmap <leader>k <Action>(MoveLineUp)
+xmap J <Action>(MoveLineDown)
+xmap K <Action>(MoveLineUp)
+
+" Navigation
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+nmap n nzzzv
+nmap N Nzzzv
+
+" Misc
+nmap <CR> o<esc>
+nmap <S-CR> O<esc>

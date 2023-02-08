@@ -56,6 +56,7 @@ bindsym $super+Shift+7 move container to workspace $tmp3
 assign [class="mpv"] $watch
 assign [class="syncplay"] $watch
 assign [class="firefox"] $firefox
+assign [class="jetbrains-idea-ce"] $code
 assign [class="TelegramDesktop"] $telegram
 assign [class="discord"] $discord
 assign [class="okular"] $pdf
