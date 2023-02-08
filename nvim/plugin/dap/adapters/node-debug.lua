@@ -1,23 +1,28 @@
-require("dap-vscode-js").setup({
-  node_path = "node",
-  debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
-  adapters = { "pwa-node" },
-})
+local dap = require("dap")
 
-require("dap").configurations.javascript = {
+dap.adapters.node2 = {
+  type = "executable",
+  command = "node",
+  args = { vim.fn.stdpath("data") .. "/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
+}
+
+dap.configurations.javascript = {
   {
     name = "debug file",
-    type = "pwa-node",
+    type = "node2",
     request = "launch",
     program = "${file}",
     cwd = "${workspaceFolder}",
+    sourceMaps = true,
+    protocol = "inspector",
+    console = "integratedTerminal",
   },
   {
+    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
     name = "attach process",
-    type = "pwa-node",
+    type = "node2",
     request = "attach",
     processId = require("dap.utils").pick_process,
-    cwd = "${workspaceFolder}",
   },
   {
     name = "debug jest tests",

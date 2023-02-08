@@ -51,7 +51,6 @@ return require("packer").startup(function(use)
   use("mfussenegger/nvim-dap")
   use("jay-babu/mason-nvim-dap.nvim")
   use("rcarriga/nvim-dap-ui")
-  use("mxsdev/nvim-dap-vscode-js")
 
   -- File exploring
   use("nvim-telescope/telescope.nvim")
