@@ -5,7 +5,7 @@ local telescope_buitin = require("telescope.builtin")
 local servers = {
   "gopls",
   "tsserver",
-  "sumneko_lua",
+  "lua_ls",
   "clangd",
   "bashls",
   "dockerls",
@@ -25,10 +25,10 @@ local function on_attach(_, bufnr)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
   vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
-  vim.keymap.set("n", "grn", vim.lsp.buf.rename, opts)
   vim.keymap.set("n", "ga", vim.lsp.buf.code_action, opts)
   vim.keymap.set("n", "ge", vim.diagnostic.goto_next, opts)
   vim.keymap.set("n", "gE", vim.diagnostic.goto_prev, opts)
+  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
   -- Telescope mappings
   vim.keymap.set("n", "grf", telescope_buitin.lsp_references, opts)
@@ -49,7 +49,7 @@ local additional_config = {
       },
     },
   },
-  sumneko_lua = {
+  lua_ls = {
     settings = {
       Lua = {
         runtime = {
