@@ -16,7 +16,7 @@ alias sudo='sudo '
 alias q='exit'
 
 # pacman
-alias i='sudo pacman -Sy'
+alias i='sudo pacman -S'
 alias r='sudo pacman -Rns'
 alias pc='sudo pacman -Sc'  # clean cache
 alias u='sudo pacman -Syu'  # sync database and update
@@ -34,5 +34,7 @@ alias yu='yay'              # sync database and update both pacman and yay packa
 alias ys='yay -Ss'
 
 # misc
+alias lg='lazygit'
 alias rmdir='rm -rf'
+alias mkdir='mkdir -p'
 alias vvim='cd ~/.config/nvim; nvim .'
