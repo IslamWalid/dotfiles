@@ -46,7 +46,7 @@ super + {comma, period, Tab}
 
 # Frequent app workspace handler
 super + {w, t, r, s, a, d, c}
-    ~/.scripts/app_handler.sh {firefox, telegram, ranger, spotify, anghami, discord, code} 
+    ~/.scripts/app_handler.sh {firefox, telegram, lf, spotify, anghami, discord, code} 
 
 # i3-modes
 super + shift + t

@@ -3,4 +3,9 @@ set shellopts '-e'
 set info size
 set ifs "\n"
 set scrolloff 10
-set ratios 1:2:3
+set dircounts
+set icons "~/.config/lf/icons"
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
