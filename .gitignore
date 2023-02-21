@@ -2,3 +2,4 @@ mpv/watch_later/
 ranger/plugins/__pycache__
 nvim/lazy-lock.json
 nvim/plugin/packer_compiled.lua
+zsh/.zcompdump
