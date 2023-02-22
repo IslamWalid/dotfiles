@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.opt.guicursor = "i:hor20"
 vim.opt.nu = true
 vim.opt.relativenumber = true

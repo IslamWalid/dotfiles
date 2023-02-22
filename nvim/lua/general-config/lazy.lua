@@ -1,3 +1,4 @@
+-- Bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,9 +14,22 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {
   concurrency = 4,
+  install = {
+    colorscheme = { "catppuccin" },
+  },
   change_detection = {
     enabled = true,
     notify = true,
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "netrwPlugin",
+        "zipPlugin",
+      },
+    },
   },
 }
 
@@ -29,35 +43,52 @@ require("lazy").setup({
   "williamboman/mason-lspconfig.nvim",
   "jose-elias-alvarez/null-ls.nvim",
   "jayp0521/mason-null-ls.nvim",
-  { "j-hui/fidget.nvim", config = true },
+  "ray-x/lsp_signature.nvim",
+  {
+    "j-hui/fidget.nvim",
+    config = {
+      window = { blend = 0 },
+    },
+  },
 
   -- Autocompletion
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-nvim-lsp",
-  "saadparwaiz1/cmp_luasnip",
-
-  -- Snippets
-  "L3MON4D3/LuaSnip",
-  "rafamadriz/friendly-snippets",
+  {
+    "quangnguyen30192/cmp-nvim-ultisnips",
+    config = function()
+      require("cmp_nvim_ultisnips").setup({
+        filetype_source = "treesitter",
+        show_snippets = "all",
+        documentation = require("cmp_nvim_ultisnips.snippets").documentation,
+      })
+    end,
+  },
+  {
+    "SirVer/ultisnips",
+    config = function()
+      vim.g.UltiSnipsSnippetDirectories = { vim.fn.stdpath("config") .. "/ultisnips" }
+    end,
+  },
 
   -- Treesitter
+  "andymass/vim-matchup",
+  "p00f/nvim-ts-rainbow",
+  "nvim-treesitter/nvim-treesitter-context",
+  "nvim-treesitter/nvim-treesitter-textobjects",
   {
     "nvim-treesitter/nvim-treesitter",
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })()
     end,
   },
-  "nvim-treesitter/nvim-treesitter-context",
-  "nvim-treesitter/nvim-treesitter-textobjects",
-  "andymass/vim-matchup",
-  "p00f/nvim-ts-rainbow",
 
   -- Dap
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
-  "mxsdev/nvim-dap-vscode-js",
+  "jay-babu/mason-nvim-dap.nvim",
 
   -- File exploring
   "nvim-telescope/telescope.nvim",
@@ -91,10 +122,19 @@ require("lazy").setup({
   "tpope/vim-surround",
   "tpope/vim-obsession",
   "lilydjwg/colorizer",
+  "kana/vim-textobj-user",
+  "kana/vim-textobj-entire",
   "akinsho/toggleterm.nvim",
   "farmergreg/vim-lastplace",
   "CRAG666/code_runner.nvim",
   "vim-scripts/ReplaceWithRegister",
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = {
+      char = "┊",
+      show_trailing_blankline_indent = false,
+    },
+  },
   {
     "tpope/vim-fugitive",
     keys = {
