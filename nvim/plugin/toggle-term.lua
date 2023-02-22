@@ -1,5 +1,4 @@
 require("toggleterm").setup({
-  size = 20,
   open_mapping = [[<C-CR>]],
   hide_numbers = true,
   shade_filetypes = {},
@@ -13,6 +12,8 @@ require("toggleterm").setup({
   shell = vim.o.shell,
   float_opts = {
     border = "curved",
+    width = 120,
+    height = 22,
     highlights = {
       border = "Normal",
       background = "Normal",
