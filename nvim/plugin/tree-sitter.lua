@@ -1,5 +1,27 @@
 require("nvim-treesitter.configs").setup({
   highlight = { enable = true },
+  ensure_installed = {
+    "c",
+    "go",
+    "help",
+    "vim",
+    "lua",
+    "bash",
+    "markdown",
+    "markdown_inline",
+    "make",
+    "diff",
+    "json",
+    "gitcommit",
+    "git_rebase",
+    "gitattributes",
+    "gitignore",
+    "sxhkdrc",
+    "toml",
+    "dockerfile",
+    "javascript",
+    "typescript",
+  },
 
   matchup = { enable = true, disable_virtual_text = true },
 
