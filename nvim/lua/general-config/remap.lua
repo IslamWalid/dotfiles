@@ -21,11 +21,17 @@ set("n", "<C-u>", "<C-u>zz")
 set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
 
+-- Buffers Control
+set("n", "<Tab>", vim.cmd.bnext, silent_noremap)
+set("n", "<S-Tab>", vim.cmd.bprevious, silent_noremap)
+set("n", "ZD", vim.cmd.bdelete, silent_noremap)
+
+-- Text objects
+set("o", "ie", ":<C-u>normal! mzggVG<CR>`z", silent_noremap)
+set("x", "ie", ":<C-u>normal! ggVG<CR>", silent_noremap)
+
 -- Misc
 set("n", "J", "mzJ`z", silent_noremap)
-set("n", "<Tab>", "<cmd>bn<CR>", silent_noremap)
-set("n", "<S-Tab>", "<cmd>bp<CR>", silent_noremap)
-set("n", "ZD", "<cmd>bd<CR>", silent_noremap)
 set("n", "<CR>", "o<esc>", noremap)
 set("n", "<S-CR>", "O<esc>", noremap)
 set("n", "gp", "`[v`]", noremap)

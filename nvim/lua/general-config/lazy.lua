@@ -122,8 +122,6 @@ require("lazy").setup({
   "tpope/vim-surround",
   "tpope/vim-obsession",
   "lilydjwg/colorizer",
-  "kana/vim-textobj-user",
-  "kana/vim-textobj-entire",
   "akinsho/toggleterm.nvim",
   "farmergreg/vim-lastplace",
   "CRAG666/code_runner.nvim",
