@@ -5,8 +5,8 @@ map rb push ra<c-a>
 
 map <enter> open
 
-map a
-map aa extract
+map e
+map ee extract
 
 map d
 map dd cut
@@ -30,14 +30,16 @@ map uu clear
 map uv unselect
 
 map i
-map i $bat --paging=always -p "$f"
+map i pager
 
-map gm cd /mnt
+map g/ cd /
+map gm cd /mnt/
 map gc cd ~/.config/
-map gd cd ~/.dotfiles/
 map go cd ~/.opt/
-map gt cd ~/Downloads/torrent/
-map gf cd ~/Downloads/firefox/
+map gd cd ~/Downloads/
+map gp cd ~/Projects/
+map gD cd ~/.dotfiles/
+map gl cd ~/.local/
 
 map S push w
 
