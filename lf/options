@@ -4,7 +4,7 @@ set info size
 set ifs "\n"
 set scrolloff 10
 set dircounts
-set icons "~/.config/lf/icons"
+# set icons "~/.config/lf/icons"
 set previewer ctpv
 set cleaner ctpvclear
 &ctpv -s $id
