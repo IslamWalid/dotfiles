@@ -19,7 +19,7 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-export PLUGINS_DIR="$HOME/.config/zsh/plugins"
+export PLUGINS_DIR="$XDG_CONFIG_HOME/zsh/plugins"
 
 # Theme
 setopt PROMPT_SUBST
@@ -34,4 +34,5 @@ source $PLUGINS_DIR/zsh-256color/zsh-256color.plugin.zsh
 source $PLUGINS_DIR/fzf/shell/key-bindings.zsh
 
 # Source files
-[[ -f $HOME/.config/zsh/zsh_aliases ]] && source "$HOME/.config/zsh/zsh_aliases"
+[[ -f $XDG_CONFIG_HOME/zsh/zsh_aliases ]] && source "$XDG_CONFIG_HOME/zsh/zsh_aliases"
+[[ -f $XDG_CONFIG_HOME/zsh/zsh_functions ]] && source "$XDG_CONFIG_HOME/zsh/zsh_functions"

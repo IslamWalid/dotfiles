@@ -33,8 +33,15 @@ alias yc='yay -c'
 alias yu='yay'              # sync database and update both pacman and yay packages
 alias ys='yay -Ss'
 
+# tmux
+alias ta='tmux attach'
+alias tas='tmux attach-session -t '
+
 # misc
 alias lg='lazygit'
+alias zr='exec zsh'
 alias rmdir='rm -rf'
 alias mkdir='mkdir -p'
-alias vvim='cd ~/.config/nvim; nvim .'
+alias cls='clear'
+alias vd='cd ~/.dotfiles/; nvim .'
+alias vv='cd ~/.dotfiles/nvim; nvim .'
