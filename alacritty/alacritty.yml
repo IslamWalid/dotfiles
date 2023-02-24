@@ -51,7 +51,6 @@ key_bindings:
   - { key: Return,         mods: Control,                         action: None }
   - { key: Equals,         mods: Control,                         action: None }
   - { key: Minus,          mods: Control,                         action: None }
-  - { key: Back,           mods: Control,                         action: None }
-  - { key: Back,           mods: Alt,                             action: ResetFontSize    }
+  - { key: Key0,           mods: Alt,                             action: ResetFontSize    }
   - { key: Equals,         mods: Alt,                             action: IncreaseFontSize }
   - { key: Minus,          mods: Alt,                             action: DecreaseFontSize }
