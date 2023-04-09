@@ -6,7 +6,7 @@ end
 require("lualine").setup({
   options = {
     icons_enabled = true,
-    theme = "catppuccin",
+    theme = vim.g.colors_name,
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {},
@@ -25,7 +25,16 @@ require("lualine").setup({
     lualine_a = {
       {
         "buffers",
+        show_filename_only = false,
         symbols = { modified = " ●", alternate_file = "", directory = "" },
+        filetype_names = {
+          TelescopePrompt = "Telescope",
+          fugitive = "Fugitive",
+          git = "git",
+          lazy = "Lazy",
+          mason = "Mason",
+          NvimTree = "NvimTree",
+        },
       },
     },
     lualine_b = {},
