@@ -104,7 +104,7 @@ nvim_tree.setup({
   },
 })
 
-vim.keymap.set("n", "<leader>fe", function()
+vim.keymap.set("n", "<leader><leader>", function()
   api.tree.toggle()
   api.tree.reload()
 end)

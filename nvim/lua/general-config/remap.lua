@@ -24,7 +24,25 @@ set("n", "N", "Nzzzv")
 -- Buffers Control
 set("n", "<Tab>", vim.cmd.bnext, silent_noremap)
 set("n", "<S-Tab>", vim.cmd.bprevious, silent_noremap)
-set("n", "ZD", vim.cmd.bdelete, silent_noremap)
+set("n", "<A-Tab>", "<C-6>", noremap)
+set("n", "<A-esc>", vim.cmd.bdelete, silent_noremap)
+
+-- Quickfix list
+set("n", "<leader>qq", function()
+  local qf_exists = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win["quickfix"] == 1 then
+      qf_exists = true
+    end
+  end
+  if qf_exists then
+    vim.cmd.cclose()
+  else
+    vim.cmd.copen()
+  end
+end, noremap)
+set("n", "<leader>qn", vim.cmd.cnext, noremap)
+set("n", "<leader>qp", vim.cmd.cprevious, noremap)
 
 -- Text objects
 set("o", "ie", ":<C-u>normal! mzggVG<CR>`z", silent_noremap)
@@ -32,7 +50,7 @@ set("x", "ie", ":<C-u>normal! ggVG<CR>", silent_noremap)
 
 -- Misc
 set("n", "J", "mzJ`z", silent_noremap)
-set("n", "<CR>", "o<esc>", noremap)
-set("n", "<S-CR>", "O<esc>", noremap)
+set("n", "<C-j>", "o<esc>", noremap)
+set("n", "<C-k>", "O<esc>", noremap)
 set("n", "gp", "`[v`]", noremap)
-set("t", "<S-esc>", "<C-\\><C-n>", noremap)
+set("t", "<A-esc>", "<C-\\><C-n>", noremap)
