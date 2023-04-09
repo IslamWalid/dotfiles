@@ -37,11 +37,14 @@ alias ys='yay -Ss'
 alias ta='tmux attach'
 alias tas='tmux attach-session -t '
 
+# config
+alias vdot='cd ~/.dotfiles/; nvim .'
+alias vvim='cd ~/.dotfiles/nvim; nvim .'
+alias vlf='cd ~/.dotfiles/lf; nvim .'
+
 # misc
 alias lg='lazygit'
 alias zr='exec zsh'
 alias rmdir='rm -rf'
 alias mkdir='mkdir -p'
 alias cls='clear'
-alias vd='cd ~/.dotfiles/; nvim .'
-alias vv='cd ~/.dotfiles/nvim; nvim .'
