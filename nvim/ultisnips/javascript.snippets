@@ -2,8 +2,8 @@ snippet req "require" w
 require('${1:module}');$0
 endsnippet
 
-snippet creq "CommonJS require" b
-const ${1:name} = require('${2:module}');$0
+snippet coreq "CommonJS require" b
+const ${2:name} = require('${1:module}');$0
 endsnippet
 
 snippet modexp "module exports" b
@@ -41,8 +41,8 @@ endsnippet
 
 snippet case "case statement" b
 case ${1:value}
-	$0
-	break;
+$0
+break;
 endsnippet
 
 snippet trycatch "try catch block" b
@@ -104,8 +104,14 @@ ${1:async }(${2:parameters}) => {
 }
 endsnippet
 
-snippet hand "http request handler" w
-${1:async }(req, res$2) => {
+snippet hand "express middleware" w
+${1:async }(req, res${2:, next}) => {
+	${0}
+}
+endsnippet
+
+snippet errhand "express error handler middleware" w
+${1:async }(req, res${2:, next}) => {
 	${0}
 }
 endsnippet
@@ -201,7 +207,7 @@ filter((${1:item}) => {
 endsnippet
 
 snippet reduce "reduce method" i
-reduce((${1:previous}, ${2:current}) => {
+reduce((${1:aggregated}, ${2:current}) => {
 	${0}
 }, ${3:initial});
 endsnippet
@@ -234,13 +240,13 @@ before(${1:async }() => {
 });
 endsnippet
 
-snippet befa "jest beforeAll function" b
+snippet befall "jest beforeAll function" b
 beforeAll(${1:async }() => {
 	${0}
 });
 endsnippet
 
-snippet befe "jest beforeEach function" b
+snippet befeach "jest beforeEach function" b
 beforeEach(${1:async }() => {
 	${0}
 });
@@ -252,13 +258,13 @@ after(${1:async }() => {
 });
 endsnippet
 
-snippet afte "jest afterEach function" b
+snippet afteach "jest afterEach function" b
 afterEach(${1:async }() => {
 	${0}
 });
 endsnippet
 
-snippet afta "jest afterAll function" b
+snippet aftall "jest afterAll function" b
 afterAll(${1:async }() => {
 	${0}
 });
