@@ -1,5 +1,18 @@
 preview media audio/* video/* {{
-    exiftool "${f}"
+    exiftool -s \
+    -filename \
+    -directory \
+    -filesize \
+    -MIMEType \
+    -filetype \
+    -Duration \
+    -VideoCodecID \
+    -DocType \
+    -ImageHeight \
+    -ImageWidth \
+    -DisplayHeight \
+    -DisplayWidth \
+    "${f}"
 }}
 
 preview iso .iso {{
