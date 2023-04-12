@@ -36,6 +36,7 @@ alias ys='yay -Ss'
 # tmux
 alias ta='tmux attach'
 alias tas='tmux attach-session -t '
+alias tl='tmuxp load $(find ~/Work ~/Projects -mindepth 1 -maxdepth 1 | fzf)'
 
 # config
 alias vdot='cd ~/.dotfiles/; nvim .'
