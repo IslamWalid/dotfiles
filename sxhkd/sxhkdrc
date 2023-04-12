@@ -54,8 +54,8 @@ super + shift + t
 
 # Toggle workspace layout
 super + grave
-    ~/.scripts/container_layout.sh
-  
+    i3-msg layout toggle
+
 # Power menu
 super + shift + x
     ~/.scripts/power.sh
