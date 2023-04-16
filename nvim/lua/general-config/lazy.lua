@@ -43,7 +43,6 @@ require("lazy").setup({
   "williamboman/mason-lspconfig.nvim",
   "jose-elias-alvarez/null-ls.nvim",
   "jayp0521/mason-null-ls.nvim",
-  "ray-x/lsp_signature.nvim",
   {
     "j-hui/fidget.nvim",
     config = {
