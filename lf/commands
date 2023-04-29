@@ -23,13 +23,13 @@ cmd open ${{
         "${EDITOR:-nvim}" ${selected}
         ;;
     image/svg+xml | image/png | image/jpeg | image/gif)
-        run "${IMAGE_VIEWER:-eog}" $selected
+        run "${IMAGE_VIEWER:-sxiv}" $selected
         ;;
     audio/*)
         run "${AUDIO_PLAYER:-"${MPV:-mpv}"}" --force-window --fs=no $selected
         ;;
     video/*)
-        run "${VIDEO_PLAYER:-"${MPV:-mpv}"}" $selected
+        run "${VIDEO_PLAYER:-"${MPV:-mpv}"}" --force-window $selected
         ;;
     *)
         for f in $selected; do
