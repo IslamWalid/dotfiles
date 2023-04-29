@@ -1,0 +1,6 @@
+customCommands:
+  - key: p
+    command: git remote prune {{.SelectedRemote.Name}}
+    context: remotes
+    description: prune remote
+    loadingText: pruning remote
