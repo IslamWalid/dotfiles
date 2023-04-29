@@ -4,3 +4,27 @@ customCommands:
     context: remotes
     description: prune remote
     loadingText: pruning remote
+
+gui:
+  theme:
+    activeBorderColor:
+      - "#a6e3a1" # Green
+      - bold
+    inactiveBorderColor:
+      - "#cdd6f4" # Text
+    optionsTextColor:
+      - "#89b4fa" # Blue
+    selectedLineBgColor:
+      - "#313260" # Surface0
+      - bold
+    selectedRangeBgColor:
+      - default
+      - bold
+    cherryPickedCommitBgColor:
+      - "#94e2d5" # Teal
+    cherryPickedCommitFgColor:
+      - "#89b4fa" # Blue
+    unstagedChangesColor:
+      - red # Red
+    defaultFgColor:
+      - default
