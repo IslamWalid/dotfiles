@@ -21,28 +21,6 @@ require("lualine").setup({
     lualine_y = { "filetype" },
     lualine_z = { "location" },
   },
-  tabline = {
-    lualine_a = {
-      {
-        "buffers",
-        show_filename_only = false,
-        symbols = { modified = " ●", alternate_file = "", directory = "" },
-        filetype_names = {
-          TelescopePrompt = "Telescope",
-          fugitive = "Fugitive",
-          git = "git",
-          lazy = "Lazy",
-          mason = "Mason",
-          NvimTree = "NvimTree",
-        },
-      },
-    },
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {},
-  },
   extensions = {
     "fugitive",
     "man",

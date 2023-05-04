@@ -22,9 +22,7 @@ set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
 
 -- Buffers Control
-set("n", "<Tab>", vim.cmd.bnext, silent_noremap)
-set("n", "<S-Tab>", vim.cmd.bprevious, silent_noremap)
-set("n", "<A-Tab>", "<C-6>", noremap)
+set("n", "<Tab>", "<C-6>", noremap)
 set("n", "<A-esc>", vim.cmd.bdelete, silent_noremap)
 
 -- Quickfix list

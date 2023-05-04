@@ -41,8 +41,8 @@ super + q
 	i3-msg kill
 
 # Workspace navigation
-super + {comma, period, Tab}
-    i3-msg workspace {prev, next, back_and_forth}
+super + Tab
+    i3-msg workspace back_and_forth
 
 # Frequent app workspace handler
 super + {w, t, r, s, a, d, c}
