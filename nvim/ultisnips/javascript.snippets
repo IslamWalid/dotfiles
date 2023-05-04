@@ -105,13 +105,13 @@ ${1:async }(${2:parameters}) => {
 endsnippet
 
 snippet hand "express middleware" w
-${1:async }(req, res${2:, next}) => {
+async (req, res, next) => {
 	${0}
 }
 endsnippet
 
 snippet errhand "express error handler middleware" w
-${1:async }(req, res${2:, next}) => {
+async (req, res, next) => {
 	${0}
 }
 endsnippet
@@ -234,12 +234,6 @@ it('${1:description}', (done) => {
 });
 endsnippet
 
-snippet bef "jest before function" b
-before(${1:async }() => {
-	${0}
-});
-endsnippet
-
 snippet befall "jest beforeAll function" b
 beforeAll(${1:async }() => {
 	${0}
@@ -248,12 +242,6 @@ endsnippet
 
 snippet befeach "jest beforeEach function" b
 beforeEach(${1:async }() => {
-	${0}
-});
-endsnippet
-
-snippet aft "jest after function" b
-after(${1:async }() => {
 	${0}
 });
 endsnippet
