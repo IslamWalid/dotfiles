@@ -18,7 +18,6 @@ alias q='exit'
 # pacman
 alias i='sudo pacman -S'
 alias r='sudo pacman -Rns'
-alias pc='sudo pacman -Sc'  # clean cache
 alias u='sudo pacman -Syu'  # sync database and update
 alias s='sudo pacman -Ss'
 alias pl='pacman -Qq'       # list installed packages
@@ -29,24 +28,27 @@ alias yll='pacman -Qmi'     # list foreign packages with details
 # yay
 alias yi='yay -S'
 alias yr='yay -Rns'
-alias yc='yay -c'
-alias yu='yay'              # sync database and update both pacman and yay packages
+alias yc='yay -Yc'     # uninstall unneeded packages
+alias pc='yay -Scc'    # clean packages cache
+alias yu='yay'         # sync database and update both pacman and yay packages
 alias ys='yay -Ss'
 
 # tmux
 alias ta='tmux attach'
 alias tas='tmux attach-session -t '
 alias tk='tmux kill-server'
-alias tl='tmuxp load '
 
 # config
 alias vdot='cd ~/.dotfiles/; nvim .'
 alias vvim='cd ~/.dotfiles/nvim; nvim .'
 alias vlf='cd ~/.dotfiles/lf; nvim .'
+alias vscr='cd ~/.scripts/; nvim .'
 
 # misc
 alias lg='lazygit'
 alias zr='exec zsh'
 alias rmdir='rm -rf'
 alias mkdir='mkdir -p'
+alias free='free -h'
+alias df='df -h'
 alias cls='clear'
