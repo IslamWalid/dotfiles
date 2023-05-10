@@ -12,31 +12,35 @@ local function open_nvim_tree(data)
   api.tree.open()
 end
 
+local function on_attach(bufnr)
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
+  vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
+  vim.keymap.set("n", "<Tab>", api.node.open.preview, opts("Open Preview"))
+  vim.keymap.set("n", "cd", api.tree.change_root_to_node, opts("CD"))
+  vim.keymap.set("n", "a", api.fs.create, opts("Create"))
+  vim.keymap.set("n", "yy", api.fs.copy.node, opts("Copy"))
+  vim.keymap.set("n", "dd", api.fs.cut, opts("Cut"))
+  vim.keymap.set("n", "pp", api.fs.paste, opts("Paste"))
+  vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
+  vim.keymap.set("n", "dD", api.fs.remove, opts("Delete"))
+  vim.keymap.set("n", "E", api.tree.expand_all, opts("Expand All"))
+  vim.keymap.set("n", "C", api.tree.collapse_all, opts("Collapse"))
+  vim.keymap.set("n", "zh", api.tree.toggle_hidden_filter, opts("Toggle Dotfiles"))
+  vim.keymap.set("n", "zi", api.tree.toggle_gitignore_filter, opts("Toggle Git Ignore"))
+end
+
 nvim_tree.setup({
   auto_reload_on_write = true,
+  on_attach = on_attach,
   sort_by = "name",
   view = {
     width = 30,
     signcolumn = "yes",
     hide_root_folder = false,
-    mappings = {
-      custom_only = true,
-      list = {
-        { key = { "<CR>", "<2-LeftMouse>" }, action = "edit" },
-        { key = "<Tab>", action = "preview" },
-        { key = "cd", action = "cd" },
-        { key = "a", action = "create" },
-        { key = "yy", action = "copy" },
-        { key = "dd", action = "cut" },
-        { key = "pp", action = "paste" },
-        { key = "r", action = "rename" },
-        { key = "dD", action = "remove" },
-        { key = "E", action = "expand_all" },
-        { key = "C", action = "collapse_all" },
-        { key = "zh", action = "toggle_dotfiles" },
-        { key = "zi", action = "toggle_git_ignored" },
-      },
-    },
   },
   renderer = {
     group_empty = true,
