@@ -117,14 +117,17 @@ require("lazy").setup({
   -- MISC
   "mbbill/undotree",
   "tpope/vim-eunuch",
-  "tpope/vim-repeat",
-  "tpope/vim-surround",
-  "tpope/vim-obsession",
   "lilydjwg/colorizer",
   "akinsho/toggleterm.nvim",
   "farmergreg/vim-lastplace",
   "CRAG666/code_runner.nvim",
   "vim-scripts/ReplaceWithRegister",
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = true
+  },
   {
     "lukas-reineke/indent-blankline.nvim",
     config = {
