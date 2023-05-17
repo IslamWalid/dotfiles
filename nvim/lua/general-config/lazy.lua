@@ -123,10 +123,14 @@ require("lazy").setup({
   "CRAG666/code_runner.nvim",
   "vim-scripts/ReplaceWithRegister",
   {
+    "kevinhwang91/nvim-bqf",
+    event = "VeryLazy",
+  },
+  {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
-    config = true
+    config = true,
   },
   {
     "lukas-reineke/indent-blankline.nvim",
