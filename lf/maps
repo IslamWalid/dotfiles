@@ -1,7 +1,6 @@
 map r
-map ra rename
-map rr push ra<c-u>
-map rb push ra<c-a>
+map rr rename
+map rt push $mv<space>-i<space>"${f}"<space>
 
 map <enter> open
 
