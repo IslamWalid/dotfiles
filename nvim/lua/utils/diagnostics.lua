@@ -1,3 +1,5 @@
+local M = {}
+
 local open_float_opts = {
   border = "none",
   scope = "line",
@@ -49,15 +51,25 @@ local open_float_opts = {
   end,
 }
 
-vim.diagnostic.config({
-  virtual_text = false,
-  float = open_float_opts,
-})
+M.setup = function()
+  vim.diagnostic.config({
+    virtual_text = false,
+    float = open_float_opts,
+  })
 
-vim.api.nvim_create_autocmd({ "CursorHold", "DiagnosticChanged" }, {
-  callback = function()
-    if vim.api.nvim_get_mode().mode == "n" then
-      vim.diagnostic.open_float(open_float_opts)
-    end
-  end,
-})
+  local signs = { Error = "✘", Warn = "", Hint = "", Info = "" }
+  for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  end
+
+  vim.api.nvim_create_autocmd({ "CursorHold", "DiagnosticChanged" }, {
+    callback = function()
+      if vim.api.nvim_get_mode().mode == "n" then
+        vim.diagnostic.open_float(open_float_opts)
+      end
+    end,
+  })
+end
+
+return M

@@ -1,0 +1,37 @@
+return {
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("utils.diagnostics").setup()
+      require("plugins.lsp.servers").setup()
+    end,
+    dependencies = {
+      "onsails/lspkind.nvim",
+      {
+        "j-hui/fidget.nvim",
+        opts = {
+          window = { blend = 0 },
+        },
+      },
+      {
+        "jose-elias-alvarez/null-ls.nvim",
+        opts = function()
+          local null_ls = require("null-ls")
+          return {
+            sources = {
+              -- formatting
+              null_ls.builtins.formatting.gofumpt,
+              null_ls.builtins.formatting.stylua,
+              null_ls.builtins.formatting.eslint_d,
+              null_ls.builtins.formatting.shfmt.with({ extra_args = { "-ci" } }),
+
+              -- diagnostics
+              null_ls.builtins.diagnostics.eslint_d,
+            },
+            on_attach = require("utils.lsp").on_attach,
+          }
+        end,
+      },
+    },
+  },
+}
