@@ -39,6 +39,9 @@ nvim_tree.setup({
   sort_by = "name",
   view = {
     width = 30,
+    adaptive_size = true,
+    number = true,
+    relativenumber = true,
     signcolumn = "yes",
     hide_root_folder = false,
   },
