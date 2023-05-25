@@ -8,6 +8,16 @@ return {
     dependencies = {
       "onsails/lspkind.nvim",
       {
+        {
+          "SmiteshP/nvim-navbuddy",
+          dependencies = {
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+          },
+          opts = { lsp = { auto_attach = true } },
+        },
+      },
+      {
         "j-hui/fidget.nvim",
         opts = {
           window = { blend = 0 },
