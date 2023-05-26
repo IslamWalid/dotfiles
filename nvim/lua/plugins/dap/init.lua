@@ -100,7 +100,7 @@ return {
     dependencies = {
       {
         "mxsdev/nvim-dap-vscode-js",
-        config = function ()
+        config = function()
           require("plugins.dap.js-debug").setup()
         end,
       },
@@ -132,16 +132,18 @@ return {
         },
         config = function(_, opts)
           local dapui = require("dapui")
+          local dap_hl = {
+            Stopped = { text = "▶", texthl = "", linehl = "debugPC", numhl = "debugPC" },
+            Breakpoint = { text = "●", texthl = "", linehl = "", numhl = "debugBreakpoint" },
+            BreakpointCondition = { text = "◆", texthl = "", linehl = "", numhl = "debugBreakpoint" },
+          }
+
+          for type, hl in pairs(dap_hl) do
+            vim.fn.sign_define("Dap" .. type, hl)
+          end
 
           dapui.setup(opts)
           vim.keymap.set({ "n", "v" }, "<leader>i", dapui.eval, { desc = "DapUI: Evaluate Expression" })
-
-          vim.fn.sign_define("DapStopped", { text = "▶", texthl = "", linehl = "debugPC", numhl = "debugPC" })
-          vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "", linehl = "", numhl = "debugBreakpoint" })
-          vim.fn.sign_define(
-            "DapBreakpointCondition",
-            { text = "◆", texthl = "", linehl = "", numhl = "debugBreakpoint" }
-          )
         end,
       },
     },
