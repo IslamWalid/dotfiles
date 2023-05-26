@@ -1,9 +1,9 @@
 return {
   "mbbill/undotree",
   "vim-scripts/ReplaceWithRegister",
-  { "numToStr/Comment.nvim",    config = true },
   { "ethanholz/nvim-lastplace", config = true },
   { "kevinhwang91/nvim-bqf",    event = "VeryLazy" },
+  { "numToStr/Comment.nvim",    config = true,     event = "VeryLazy" },
   { "kylechui/nvim-surround",   version = "*",     event = "VeryLazy", config = true },
   {
     "williamboman/mason.nvim",
