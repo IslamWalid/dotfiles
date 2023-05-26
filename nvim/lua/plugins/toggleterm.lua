@@ -1,7 +1,6 @@
 return {
   "akinsho/toggleterm.nvim",
   opts = {
-    size = 20,
     open_mapping = [[<C-CR>]],
     hide_numbers = true,
     shade_filetypes = {},
@@ -15,13 +14,15 @@ return {
     shell = vim.o.shell,
     float_opts = {
       border = "curved",
-      highlights = {
-        border = "Normal",
-        background = "Normal",
-      },
+      width = function()
+        return math.ceil(vim.api.nvim_win_get_width(0) * 0.85)
+      end,
+      height = function()
+        return math.ceil(vim.api.nvim_win_get_height(0) * 0.85)
+      end,
     },
   },
   keys = {
-    { "<C-CR>", "<cmd>ToggleTerm<CR>", desc = "ToggleTerm"}
-  }
+    { "<C-CR>", "<cmd>ToggleTerm<CR>", desc = "ToggleTerm" },
+  },
 }
