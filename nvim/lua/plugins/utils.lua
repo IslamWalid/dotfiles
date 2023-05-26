@@ -1,10 +1,10 @@
 return {
   "mbbill/undotree",
   "vim-scripts/ReplaceWithRegister",
-  { "numToStr/Comment.nvim", config = true },
+  { "numToStr/Comment.nvim",    config = true },
   { "ethanholz/nvim-lastplace", config = true },
-  { "kevinhwang91/nvim-bqf", event = "VeryLazy" },
-  { "kylechui/nvim-surround", version = "*", event = "VeryLazy", config = true },
+  { "kevinhwang91/nvim-bqf",    event = "VeryLazy" },
+  { "kylechui/nvim-surround",   version = "*",     event = "VeryLazy", config = true },
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
@@ -13,10 +13,15 @@ return {
         icons = {
           package_installed = "✓",
           package_pending = "➜",
-          package_uninstalled = "✗"
+          package_uninstalled = "✗",
         },
       },
     },
+  },
+  {
+    "stevearc/oil.nvim",
+    opts = { default_file_explorer = false },
+    cmd = "Oil",
   },
   {
     "toppair/peek.nvim",
