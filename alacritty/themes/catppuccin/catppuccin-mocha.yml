@@ -8,8 +8,9 @@ colors:
 
     # Cursor colors
     cursor:
-        text: "#1E1E2E" # base
-        cursor: "#F5E0DC" # rosewater
+        custom_color: false
+        # text: "#1E1E2E" # base
+        # cursor: "#F5E0DC" # rosewater
     vi_mode_cursor:
         text: "#1E1E2E" # base
         cursor: "#B4BEFE" # lavender

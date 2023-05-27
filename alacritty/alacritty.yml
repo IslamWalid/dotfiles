@@ -1,7 +1,7 @@
 window:
   opacity: 1.0
   padding:
-    x: 4
+    x: 6
     y: 6
   decorations: full
   title: alacritty
