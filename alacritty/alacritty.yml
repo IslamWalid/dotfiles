@@ -1,8 +1,8 @@
 window:
   opacity: 1.0
   padding:
-    x: 3
-    y: 1
+    x: 4
+    y: 6
   decorations: full
   title: alacritty
   dynamic_title: false
@@ -32,7 +32,7 @@ font:
     family: terminal
     style: Bold Italic
 
-  size: 14
+  size: 12
 
 import:
   - ~/.config/alacritty/themes/catppuccin/catppuccin-mocha.yml
