@@ -1,7 +1,7 @@
 return {
   "akinsho/toggleterm.nvim",
   opts = {
-    open_mapping = [[<C-CR>]],
+    open_mapping = [[<C-\>]],
     hide_numbers = true,
     shade_filetypes = {},
     shade_terminals = true,
@@ -23,6 +23,6 @@ return {
     },
   },
   keys = {
-    { "<C-CR>", "<cmd>ToggleTerm<CR>", desc = "ToggleTerm" },
+    { "<C-\\>", "<cmd>ToggleTerm<CR>", desc = "ToggleTerm" },
   },
 }

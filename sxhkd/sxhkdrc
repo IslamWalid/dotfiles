@@ -82,7 +82,7 @@ Menu
 
 # Run terminal
 super + Return
-	i3-msg exec kitty
+	i3-msg exec $TERMINAL
 
 # Mount usb drives
 super + m

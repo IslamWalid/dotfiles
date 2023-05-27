@@ -1,11 +1,11 @@
 # default programs
 export EDITOR="nvim"
 export VISUAL="nvim"
-export FILE="ranger"
-export TERMINAL="kitty"
-export GOPATH="$HOME/.go"
+export FILE="lf"
+export TERMINAL="alacritty"
 
 # add needed exe directories to path
+export GOPATH="$HOME/.go"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$GOPATH/bin"
 
