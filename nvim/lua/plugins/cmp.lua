@@ -70,7 +70,7 @@ return {
             mode = "symbol_text",
             menu = {
               nvim_lsp = "[lsp]",
-              luasnip = "[snip]",
+              ultisnips = "[snip]",
               buffer = "[buf]",
               path = "[path]",
             },
