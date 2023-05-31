@@ -23,9 +23,6 @@ return {
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help Tags" })
       vim.keymap.set("n", "<leader>ft", builtin.treesitter, { desc = "Find Treesitter" })
       vim.keymap.set("n", "<leader>fz", builtin.current_buffer_fuzzy_find, { desc = "Current File Fuzzy Find" })
-      vim.keymap.set("n", "<leader>fz", function()
-        builtin.find_files({ hidden = true })
-      end, { desc = "Find Files With Hidden Files" })
   end,
   dependencies = {
     "nvim-lua/plenary.nvim",

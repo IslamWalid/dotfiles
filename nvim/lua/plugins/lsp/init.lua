@@ -24,7 +24,7 @@ return {
               },
               sections = {
                 left = { size = "20%" },
-                mid = { size = "25%" },
+                mid = { size = "30%" },
                 right = { preview = "always" },
               },
             },
