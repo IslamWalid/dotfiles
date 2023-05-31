@@ -4,7 +4,6 @@ return {
     branch = "v2.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      -- "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
     config = function()
@@ -12,6 +11,7 @@ return {
       vim.g.neo_tree_remove_legacy_commands = 1
 
       require("neo-tree").setup({
+        use_default_mappings = false,
         event_handlers = {
           {
             event = "file_opened",
@@ -90,7 +90,7 @@ return {
         filesystem = {
           filtered_items = {
             hide_by_name = { "node_modules" },
-            always_show = { ".gitignored", ".dockerignore" },
+            always_show = { ".gitignore", ".dockerignore" },
           },
           group_empty_dirs = true,
           use_libuv_file_watcher = true,
