@@ -2,8 +2,8 @@ return {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require("plugins.dap.dlv")
-      require("plugins.dap.codelldb")
+      require("plugins.dap.dlv").setup()
+      require("plugins.dap.codelldb").setup()
 
       local dap = require("dap")
       local dapui = require("dapui")
@@ -18,6 +18,56 @@ return {
       dap.listeners.after.event_exited["dapui_config"] = after_session
       dap.listeners.after.disconnect["dapui_config"] = after_session
     end,
+    dependencies = {
+      {
+        "mxsdev/nvim-dap-vscode-js",
+        config = function()
+          require("plugins.dap.js-debug").setup()
+        end,
+      },
+      {
+        "rcarriga/nvim-dap-ui",
+        opts = {
+          icons = { expanded = "▾", collapsed = "▸" },
+          mappings = {
+            expand = { "<CR>", "<2-LeftMouse>" },
+            open = "o",
+            remove = "d",
+            edit = "e",
+            repl = "r",
+            toggle = "t",
+          },
+          layouts = {
+            {
+              elements = {
+                "watches",
+                { id = "scopes", size = 0.6 },
+              },
+              size = 40,
+              position = "left",
+            },
+          },
+          controls = {
+            enabled = false,
+          },
+        },
+        config = function(_, opts)
+          local dapui = require("dapui")
+          local dap_hl = {
+            Stopped = { text = "▶", texthl = "", linehl = "debugPC", numhl = "debugPC" },
+            Breakpoint = { text = "●", texthl = "", linehl = "", numhl = "debugBreakpoint" },
+            BreakpointCondition = { text = "◆", texthl = "", linehl = "", numhl = "debugBreakpoint" },
+          }
+
+          for type, hl in pairs(dap_hl) do
+            vim.fn.sign_define("Dap" .. type, hl)
+          end
+
+          dapui.setup(opts)
+          vim.keymap.set({ "n", "v" }, "<leader>i", dapui.eval, { desc = "DapUI: Evaluate Expression" })
+        end,
+      },
+    },
     keys = {
       {
         "<F5>",
@@ -95,56 +145,6 @@ return {
           require("dap").step_out()
         end,
         desc = "Dap: Step Out",
-      },
-    },
-    dependencies = {
-      {
-        "mxsdev/nvim-dap-vscode-js",
-        config = function()
-          require("plugins.dap.js-debug").setup()
-        end,
-      },
-      {
-        "rcarriga/nvim-dap-ui",
-        opts = {
-          icons = { expanded = "▾", collapsed = "▸" },
-          mappings = {
-            expand = { "<CR>", "<2-LeftMouse>" },
-            open = "o",
-            remove = "d",
-            edit = "e",
-            repl = "r",
-            toggle = "t",
-          },
-          layouts = {
-            {
-              elements = {
-                "watches",
-                { id = "scopes", size = 0.6 },
-              },
-              size = 40,
-              position = "left",
-            },
-          },
-          controls = {
-            enabled = false,
-          },
-        },
-        config = function(_, opts)
-          local dapui = require("dapui")
-          local dap_hl = {
-            Stopped = { text = "▶", texthl = "", linehl = "debugPC", numhl = "debugPC" },
-            Breakpoint = { text = "●", texthl = "", linehl = "", numhl = "debugBreakpoint" },
-            BreakpointCondition = { text = "◆", texthl = "", linehl = "", numhl = "debugBreakpoint" },
-          }
-
-          for type, hl in pairs(dap_hl) do
-            vim.fn.sign_define("Dap" .. type, hl)
-          end
-
-          dapui.setup(opts)
-          vim.keymap.set({ "n", "v" }, "<leader>i", dapui.eval, { desc = "DapUI: Evaluate Expression" })
-        end,
       },
     },
   },
