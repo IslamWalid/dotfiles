@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function()
   require("dap-vscode-js").setup({
-    debugger_path = vim.fn.stdpath("data") .. "/mason/packages/vscode-js-debug",
+    debugger_path = os.getenv("HOME") .. "/.opt/vscode-js-debug",
     adapters = { "pwa-node" },
   })
 

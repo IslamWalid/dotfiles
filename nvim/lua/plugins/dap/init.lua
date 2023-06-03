@@ -43,7 +43,7 @@ return {
                 "watches",
                 { id = "scopes", size = 0.6 },
               },
-              size = 40,
+              size = 0.3,
               position = "left",
             },
           },
