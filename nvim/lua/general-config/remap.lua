@@ -16,8 +16,8 @@ set("x", "J", ":m '>+1<CR>gv=gv", silent)
 set("x", "K", ":m '<-2<CR>gv=gv", silent)
 
 -- Navigation
-set("n", "<C-d>", "<C-d>zz")
-set("n", "<C-u>", "<C-u>zz")
+set("n", "<C-d>", "5<C-d>zz")
+set("n", "<C-u>", "5<C-u>zz")
 set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
 
