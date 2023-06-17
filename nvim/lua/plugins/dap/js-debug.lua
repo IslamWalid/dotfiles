@@ -20,7 +20,7 @@ M.setup = function()
         name = "Attach Process",
         type = "pwa-node",
         request = "attach",
-        processId = function ()
+        processId = function()
           require("dap.utils").pick_process("node --inspect")
         end,
       },
