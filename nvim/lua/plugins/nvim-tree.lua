@@ -1,6 +1,5 @@
 return {
   "kyazdani42/nvim-tree.lua",
-  enabled = false,
   opts = function()
     local api = require("nvim-tree.api")
 
