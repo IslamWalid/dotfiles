@@ -14,14 +14,14 @@ M.setup = function()
 
   dap.configurations.go = {
     {
-      name = "Debug Project",
+      name = "Project",
       type = "delve",
       request = "launch",
       mode = "debug",
       program = "${fileDirname}",
     },
     {
-      name = "Debug Project (with args)",
+      name = "Project (with args)",
       type = "delve",
       request = "launch",
       program = "${fileDirname}",
@@ -31,7 +31,14 @@ M.setup = function()
       end,
     },
     {
-      name = "Debug Executable",
+      name = "Attach Process",
+      type = "delve",
+      request = "attach",
+      mode = "local",
+      processId = require("dap.utils").pick_process,
+    },
+    {
+      name = "Executable",
       type = "delve",
       request = "launch",
       mode = "exec",
@@ -40,14 +47,14 @@ M.setup = function()
       end,
     },
     {
-      name = "Debug Tests",
+      name = "Tests",
       type = "delve",
       request = "launch",
       mode = "test",
       program = "${fileDirname}",
     },
     {
-      name = "Debug Specific Test",
+      name = "Specific Test",
       type = "delve",
       request = "launch",
       mode = "test",
