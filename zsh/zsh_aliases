@@ -36,7 +36,9 @@ alias ys='yay -Ss'
 # tmux
 alias ta='tmux attach'
 alias tas='tmux attach-session -t '
+alias tls='tmux list-sessions'
 alias tk='tmux kill-server'
+alias tks='tmux kill-session -t '
 
 # config
 alias vdot='cd ~/.dotfiles/; nvim .'
