@@ -18,13 +18,13 @@ gui:
       - "#313260" # Surface0
       - bold
     selectedRangeBgColor:
-      - default
+      - "#313260" # Surface0
       - bold
     cherryPickedCommitBgColor:
       - "#94e2d5" # Teal
     cherryPickedCommitFgColor:
       - "#89b4fa" # Blue
     unstagedChangesColor:
-      - red # Red
+      - red       # Red
     defaultFgColor:
       - default
