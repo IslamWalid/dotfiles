@@ -171,45 +171,45 @@ set ${1:property} (${2:value}) {
 endsnippet
 
 snippet foreach "forEach method" i
-forEach((${1:element}) => {
+${1:collection.}forEach((${2:element}) => {
 	$0
 });
 endsnippet
 
 snippet map "map method" i
-map((${1:item}) => {
+${1:collection.}map((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet every "every method" i
-every((${1:item}) => {
+${1:collection.}every((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet some "some method" i
-some((${1:item}) => {
+${1:collection.}some((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet find "find method" i
-find((${1:item}) => {
+${1:collection.}find((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet filter "filter method" i
-filter((${1:item}) => {
+${1:collection.}filter((${2:element}) => {
 	${0}
 });
 endsnippet
 
 snippet reduce "reduce method" i
-reduce((${1:aggregated}, ${2:current}) => {
+${1:collection.}reduce((${2:aggregated}, ${3:current}) => {
 	${0}
-}, ${3:initial});
+}, ${4:initial});
 endsnippet
 
 snippet desc "jest describe function" b
