@@ -5,6 +5,7 @@ return {
   { "kevinhwang91/nvim-bqf",    event = "VeryLazy" },
   { "numToStr/Comment.nvim",    config = true,     event = "VeryLazy" },
   { "kylechui/nvim-surround",   version = "*",     event = "VeryLazy", config = true },
+  { "chrishrb/gx.nvim",         config = true,     keys = "gx" },
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
