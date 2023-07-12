@@ -30,11 +30,15 @@ set("n", "<leader>qo", vim.cmd.copen)
 set("n", "<leader>qn", function()
   if not pcall(vim.cmd.cnext) then
     print("Quickfix: No Next Errors")
+  else
+    vim.cmd.normal("zz")
   end
 end)
 set("n", "<leader>qp", function()
   if not pcall(vim.cmd.cprevious) then
     print("Quickfix: No Previous Errors")
+  else
+    vim.cmd.normal("zz")
   end
 end)
 set("n", "<leader>qq", function()
