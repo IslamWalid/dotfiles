@@ -22,6 +22,7 @@ return {
     vim.keymap.set("n", "<leader>fg", builtin.git_files, { desc = "Find Git Files" })
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help Tags" })
     vim.keymap.set("n", "<leader>ft", builtin.treesitter, { desc = "Find Treesitter" })
+    vim.keymap.set("n", "<leader>qh", builtin.quickfixhistory, { desc = "Quickfix History" })
     vim.keymap.set("n", "<leader>fz", builtin.current_buffer_fuzzy_find, { desc = "Current File Fuzzy Find" })
   end,
   dependencies = {
