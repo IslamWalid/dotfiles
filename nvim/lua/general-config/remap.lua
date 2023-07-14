@@ -26,21 +26,22 @@ set("n", "<Tab>", "<C-6>", noremap)
 set("n", "<A-esc>", vim.cmd.bdelete, silent_noremap)
 
 -- Quickfix list
-set("n", "<leader>qo", vim.cmd.copen)
 set("n", "<leader>qn", function()
   if not pcall(vim.cmd.cnext) then
     print("Quickfix: No Next Errors")
   else
     vim.cmd.normal("zz")
   end
-end)
+end, { desc = "Quickfix Next" })
+
 set("n", "<leader>qp", function()
   if not pcall(vim.cmd.cprevious) then
     print("Quickfix: No Previous Errors")
   else
     vim.cmd.normal("zz")
   end
-end)
+end, { desc = "Quickfix Previous" })
+
 set("n", "<leader>qq", function()
   local qf_exists = false
   for _, win in pairs(vim.fn.getwininfo()) do
@@ -53,7 +54,7 @@ set("n", "<leader>qq", function()
   else
     vim.cmd.copen()
   end
-end, noremap)
+end, { desc = "Quickfix Toggle" })
 
 -- Text objects
 set("o", "ie", ":<C-u>normal! mzggVG<CR>`z", silent_noremap)
