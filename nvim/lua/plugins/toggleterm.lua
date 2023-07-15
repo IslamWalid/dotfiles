@@ -15,10 +15,10 @@ return {
     float_opts = {
       border = "curved",
       width = function()
-        return math.ceil(vim.api.nvim_win_get_width(0) * 0.85)
+        return math.ceil(vim.api.nvim_get_option_value("columns", {}) * 0.85)
       end,
       height = function()
-        return math.ceil(vim.api.nvim_win_get_height(0) * 0.85)
+        return math.ceil(vim.api.nvim_get_option_value("lines", {}) * 0.8)
       end,
     },
   },

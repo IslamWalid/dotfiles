@@ -2,10 +2,10 @@ return {
   "mbbill/undotree",
   "vim-scripts/ReplaceWithRegister",
   { "ethanholz/nvim-lastplace", config = true },
-  { "kevinhwang91/nvim-bqf",    event = "VeryLazy" },
-  { "numToStr/Comment.nvim",    config = true,     event = "VeryLazy" },
-  { "kylechui/nvim-surround",   version = "*",     event = "VeryLazy", config = true },
-  { "chrishrb/gx.nvim",         config = true,     keys = "gx" },
+  { "kevinhwang91/nvim-bqf",    keys = "<leader>qq" },
+  { "chrishrb/gx.nvim",         config = true,      keys = "gx" },
+  { "numToStr/Comment.nvim",    config = true,      event = "VeryLazy" },
+  { "kylechui/nvim-surround",   version = "*",      event = "VeryLazy", config = true },
   {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
@@ -38,6 +38,7 @@ return {
             peek.open()
           end
         end,
+        desc = "Toggle Markdown Preview",
       },
     },
   },
