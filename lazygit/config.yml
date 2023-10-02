@@ -3,7 +3,7 @@ customCommands:
     command: git remote prune {{.SelectedRemote.Name}}
     context: remotes
     description: prune remote
-    loadingText: pruning remote
+    loadingText: Pruning remote
 
 gui:
   theme:
