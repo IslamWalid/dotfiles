@@ -22,5 +22,3 @@ vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.updatetime = 1000
-vim.opt.conceallevel = 3
-vim.opt.concealcursor = "n"
