@@ -3,6 +3,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export FILE="lf"
 export TERMINAL="alacritty"
+export BROWSER="brave"
 
 # add needed exe directories to path
 export GOPATH="$HOME/.go"
