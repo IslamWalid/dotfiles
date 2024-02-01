@@ -1,0 +1,77 @@
+import = ["/home/islam/.config/alacritty/themes/catppuccin/mocha.toml"]
+live_config_reload = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[font]
+size = 12
+
+[font.bold]
+family = "terminal"
+style = "Bold"
+
+[font.bold_italic]
+family = "terminal"
+style = "Bold Italic"
+
+[font.italic]
+family = "terminal"
+style = "Italic"
+
+[font.normal]
+family = "terminal"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[window]
+decorations = "full"
+dynamic_padding = true
+dynamic_title = false
+opacity = 1.0
+title = "alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 6
+y = 6
