@@ -1,0 +1,275 @@
+snippet modexp "module exports" b
+module.exports = ${1:name};
+endsnippet
+
+snippet if "if statement" b
+if (${1:condition}) {
+	$2
+}
+endsnippet
+
+snippet elif "else if statement" w
+else if (${1:condition}) {
+	$2
+}
+endsnippet
+
+snippet else "else statement" w
+else {
+	$0
+}
+endsnippet
+
+snippet switch "switch case statement" b
+switch (${1:switchOn}) {
+	case ${2:value}:
+		$0
+		break;
+
+	default:
+		break;
+}
+endsnippet
+
+snippet case "case statement" b
+case ${1:value}
+$0
+break;
+endsnippet
+
+snippet trycatch "try catch block" b
+try {
+	$2
+} catch (${1:err}) {
+	$3
+}$0
+endsnippet
+
+snippet for "for loop over array" b
+for (let ${1:i} = 0; $1 < ${2:array}.length; $1++) {
+	$0
+}
+endsnippet
+
+snippet forof "for-of loop" b
+for (const ${1:iterator} of ${2:object}) {
+	$0
+}
+endsnippet
+
+snippet forin "for-in loop" b
+for (const ${1:key} in ${2:object}) {
+	if ($2.hasOwnProperty($1)) {
+		const ${3:element} = $2[$1];
+		$0
+	}
+}
+endsnippet
+
+snippet while "while loop" b
+while (${1:condition}) {
+	$0
+}
+endsnippet
+
+snippet dowhile "do-while loop" b
+do {
+	$0
+} while (${1:condition});
+endsnippet
+
+snippet func "function definition" b
+${1:async }function ${2:name}(${3:parameters}): ${4:return} {
+	${0}
+}
+endsnippet
+
+snippet efunc "function expression statement" w
+${1:async }function(${2:parameters}): ${3:return} {
+	${0}
+}
+endsnippet
+
+snippet arrow "arrow function statement" w
+${1:async }(${2:parameters}) => {
+	${0}
+}
+endsnippet
+
+snippet hand "express middleware" w
+async (req, res, next) => {
+	${0}
+}
+endsnippet
+
+snippet errhand "express error handler middleware" w
+async (req, res, next) => {
+	${0}
+}
+endsnippet
+
+snippet imfunc "immediately invoked function expression" b
+(${1:async }(${2:parameters}) => {
+	${0}
+})(${3:arguments});
+endsnippet
+
+snippet cls "class definition" b
+class ${1:name} {
+	$0
+}
+endsnippet
+
+snippet clsx "class definition with extends statement" b
+class ${1:name} extends ${2:base} {
+	$0
+}
+endsnippet
+
+snippet clsi "class definition with implements statement" b
+class ${1:name} implements ${2:base} {
+	$0
+}
+endsnippet
+
+snippet ecls "exports a class definition" b
+export class ${1:name} {
+	$0
+}
+endsnippet
+
+snippet eclsx "exports a class definition with extends statement" b
+export class ${1:name} extends ${2:base} {
+	$0
+}
+endsnippet
+
+snippet eclsi "exports class definition with implements statement" b
+export class ${1:name} implements ${2:base} {
+	$0
+}
+endsnippet
+
+snippet new "new statement" b
+const ${1:name} = new ${2:type}(${3:arguments});$0
+endsnippet
+
+snippet constructor "constructor definition" b
+constructor (${1:parameters}) {
+	${0}
+}
+endsnippet
+
+snippet meth "method definition" b
+${1:static }${2:async }${3:method}(${4:parameters}) {
+	${0}
+}
+endsnippet
+
+snippet clog "console.log() to stdout" b
+console.log($1);$0
+endsnippet
+
+snippet cerr "console.error() to stderr" b
+console.error($1);$0
+endsnippet
+
+snippet get "object get expression" b
+get ${1:property} () {
+	${0}
+}
+endsnippet
+
+snippet set "object set expression" b
+set ${1:property} (${2:value}) {
+	${0}
+}
+endsnippet
+
+snippet foreach "forEach method" i
+${1:collection.}forEach((${2:element}) => {
+	$0
+});
+endsnippet
+
+snippet map "map method" i
+${1:collection.}map((${2:element}) => {
+	${0}
+});
+endsnippet
+
+snippet every "every method" i
+${1:collection.}every((${2:element}) => {
+	${0}
+});
+endsnippet
+
+snippet some "some method" i
+${1:collection.}some((${2:element}) => {
+	${0}
+});
+endsnippet
+
+snippet find "find method" i
+${1:collection.}find((${2:element}) => {
+	${0}
+});
+endsnippet
+
+snippet filter "filter method" i
+${1:collection.}filter((${2:element}) => {
+	${0}
+});
+endsnippet
+
+snippet reduce "reduce method" i
+${1:collection.}reduce((${2:aggregated}, ${3:current}) => {
+	${0}
+}, ${4:initial});
+endsnippet
+
+snippet desc "jest describe function" b
+describe('${1:description}', () => {
+	${0}
+});
+endsnippet
+
+snippet it "jest it function" b
+it('${1:description}', ${2:async }() => {
+	${0}
+});
+endsnippet
+
+snippet itto "jest it.todo function" b
+it.todo('${1:description}');$0
+endsnippet
+
+snippet itdo "jest it with done callback" b
+it('${1:description}', (done) => {
+	${0}
+});
+endsnippet
+
+snippet befall "jest beforeAll function" b
+beforeAll(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet befeach "jest beforeEach function" b
+beforeEach(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet afteach "jest afterEach function" b
+afterEach(${1:async }() => {
+	${0}
+});
+endsnippet
+
+snippet aftall "jest afterAll function" b
+afterAll(${1:async }() => {
+	${0}
+});
+endsnippet
