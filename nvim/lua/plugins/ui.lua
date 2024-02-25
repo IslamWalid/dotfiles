@@ -3,9 +3,11 @@ return {
   { "lewis6991/gitsigns.nvim", opts = { numhl = true } },
   {
     "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
     opts = {
-      char = "┊",
-      show_trailing_blankline_indent = false,
+      indent = { char = "┊" },
+      whitespace = { remove_blankline_trail = false },
+      scope = { enabled = false },
     },
   },
   {
