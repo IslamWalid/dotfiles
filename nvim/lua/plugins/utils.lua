@@ -7,6 +7,12 @@ return {
   { "numToStr/Comment.nvim",    config = true, event = "VeryLazy" },
   { "kylechui/nvim-surround",   version = "*", event = "VeryLazy", config = true },
   {
+    "folke/todo-comments.nvim",
+    opts = { signs = false },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "TodoTelescope", "TodoQuickFix" },
+  },
+  {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
     opts = {
@@ -18,11 +24,6 @@ return {
         },
       },
     },
-  },
-  {
-    "stevearc/oil.nvim",
-    opts = { default_file_explorer = false },
-    cmd = "Oil",
   },
   {
     "toppair/peek.nvim",
