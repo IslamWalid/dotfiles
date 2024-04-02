@@ -12,6 +12,7 @@ export PATH="$PATH:$GOPATH/bin"
 
 # integrate bat with man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT='-c'
 
 # zsh history config
 export HIST_IGNORE_ALL_DUPS=true
