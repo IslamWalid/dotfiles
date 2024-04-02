@@ -9,9 +9,8 @@ map ee extract
 
 map d
 map dd cut
-map dD delete
-map dt trash
-map <delete> delete
+map dD trash
+map <delete> trash
 
 map y
 map yy copy
@@ -21,7 +20,7 @@ map pp paste
 
 map c
 map cd push $mkdir<space>-p<space>
-map cf push $touch<spcae>
+map cf push $touch<space>
 map cs calcdirsize
 
 map u
