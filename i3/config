@@ -64,6 +64,7 @@ assign [class="anghami"] $music
 assign [class="lf"] $filemanager
 assign [class="Postman"] $devtools
 assign [class="beekeeper-studio"] $devtools
+assign [class="MongoDB Compass"] $devtools
 
 for_window [instance="spotify"] move to workspace $music
 
