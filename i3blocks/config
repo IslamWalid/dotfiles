@@ -25,11 +25,11 @@ signal=10
 
 [separator]
 
-[battery]
-command=$HOME/.scripts/battery.sh
-interval=1
-
-[separator]
+# [battery]
+# command=$HOME/.scripts/battery.sh
+# interval=1
+#
+# [separator]
 
 [date]
 label= 
