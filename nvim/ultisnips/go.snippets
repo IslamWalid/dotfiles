@@ -90,7 +90,7 @@ endsnippet
 
 snippet ierr "if err != nil" b
 if err != nil {
-	${1:return ${2:nil, }${3:err}}
+	${1:return} $2
 }
 endsnippet
 
@@ -125,13 +125,9 @@ for ${1:i} := ${2:0}; $1 < ${3:count}; $1${4:++} {
 endsnippet
 
 snippet forr "for range loop" b
-for ${1:_, }${2:v} := range ${3:v} {
+for ${1:_, }${2:value} := range ${3:collection} {
 	$0
 }
-endsnippet
-
-snippet json "struct json tag" w
-`json:"$1"`$0
 endsnippet
 
 snippet okmap
@@ -148,10 +144,6 @@ snippet map "map declaration" w
 map[${1:type}]${2:type}
 endsnippet
 
-snippet in "empty interface" w
-interface{}
-endsnippet
-
 snippet make "make statement" w
 make(${1:type}, ${2:0})$0
 endsnippet
@@ -160,14 +152,14 @@ snippet new "Snippet for new statement" w
 new(${1:type})$0
 endsnippet
 
-snippet go "Anonymous goroutine declaration" b
+snippet go "goroutine declaration" b
+go ${1:func}($0)
+endsnippet
+
+snippet gof "Anonymous goroutine declaration" b
 go func($1) {
 	$0
 }($2)
-endsnippet
-
-snippet gof "goroutine declaration" b
-go ${1:func}($0)
 endsnippet
 
 snippet tfunc "Test function" b
@@ -175,6 +167,13 @@ func Test$1(t *testing.T) {
 	$0
 }
 endsnippet
+
+snippet trun "Test Run method" b
+t.Run("$1", func(t *testing.T) {
+    $0
+})
+endsnippet
+
 
 snippet tmain "TestMain function" b
 func TestMain(m *testing.M) {
@@ -197,5 +196,11 @@ func Example$1() {
 	$2
 	//Output:
 	$3
+}
+endsnippet
+
+snippet ghand "Gin Handler function" i
+func ${1:handler}(c *gin.Context) {
+	$0
 }
 endsnippet
