@@ -6,6 +6,7 @@ font pango: 0
 exec nm-applet
 exec picom
 exec sxhkd
+exec xkbi3 -i3blocks SIGRTMIN+12
 exec feh --bg-center /home/islam/Pictures/wallpapers/jpg/city.jpg
 
 # options
