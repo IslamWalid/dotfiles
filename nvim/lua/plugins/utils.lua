@@ -3,9 +3,13 @@ return {
   "vim-scripts/ReplaceWithRegister",
   { "ethanholz/nvim-lastplace", config = true },
   { "kevinhwang91/nvim-bqf",    ft = "qf" },
-  { "chrishrb/gx.nvim",         config = true, keys = "gx" },
   { "numToStr/Comment.nvim",    config = true, event = "VeryLazy" },
   { "kylechui/nvim-surround",   version = "*", event = "VeryLazy", config = true },
+  {
+    "chrishrb/gx.nvim",
+    config = true,
+    keys = { { "gx", vim.cmd.Browse, mode = { "n", "x" } } },
+  },
   {
     "folke/todo-comments.nvim",
     opts = { signs = false },
