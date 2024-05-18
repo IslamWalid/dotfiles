@@ -22,3 +22,19 @@ vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.updatetime = 1000
+
+-- vim.opt.foldmethod = "indent"
+-- vim.opt.foldnestmax = 1
+-- vim.opt.fillchars = "fold: "
+--
+-- vim.opt.foldtext = "v:lua.custom_fold_text()"
+-- function custom_fold_text()
+--   local indent = vim.fn.indent(vim.v.foldstart - 1)
+--   local fold_size = 1 + vim.v.foldend - vim.v.foldstart
+--   local fold_size_str = " " .. fold_size .. " lines "
+--   local fold_level_str = string.rep("    +--", vim.v.foldlevel)
+--   local expansion_string = string.rep(" ", indent)
+--   return expansion_string .. fold_level_str .. fold_size_str
+-- end
+--
+-- vim.cmd('highlight Folded guibg=#191824 guifg=#88b4fb')
