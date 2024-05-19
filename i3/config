@@ -23,7 +23,7 @@ gaps outer 2
 # variables for each workspace
 set $terminal "1"
 set $filemanager "2"
-set $browser "3"
+set $browser "3"
 set $telegram "4"
 set $code "5"
 set $devtools "6"
