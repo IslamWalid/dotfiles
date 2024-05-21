@@ -22,7 +22,7 @@ super + f
 
 # Workspace fullscreen mode
 super + shift + f
-    ~/.scripts/workspace_fullscreen.sh
+    ~/.scripts/bar_toggle.sh
 
 # Floating window toggle
 super + shift + space
@@ -90,7 +90,7 @@ super + m
 
 # Change keyboard layout
 super + space
-    ~/.scripts/language.sh
+    xkb-switch -n && pkill -SIGRTMIN+12 i3blocks
 
 # Toggle touchpad enable
 Scroll_Lock
@@ -98,27 +98,27 @@ Scroll_Lock
 
 # Control volume
 super + {minus, equal, BackSpace}
-	~/.scripts/volume.sh    {lower, higher, toggle}
+    amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+10 i3blocks
 
 # Control mic
 super + shift + {minus, equal, BackSpace}
-	~/.scripts/mic.sh    {lower, higher, toggle}
-
-# Take a screenshot of the entire screen and copy it to the clipboard
-Insert
-	maim -u | xclip -selection clipboard -t image/png
-
-# Take a screenshot of the entire screen and copy it to the clipboard then save it
-ctrl + Insert
-	maim -u | tee ~/Pictures/screen-shots/$(date '+%F-%T').png | xclip -selection clipboard -t image/png
+    amixer -D pulse sset Capture {2%-, 2%+, toggle} && pkill -SIGRTMIN+10 i3blocks
 
 # Take a screenshot of the selected portion of the screen and copy it to the clipboard
-alt + Insert
+Insert
 	maim -s | xclip -selection clipboard -t image/png
 
 # Take a screenshot of the selected portion of the screen and copy it to the clipboard then save it 
-alt + ctrl + Insert
+ctrl + Insert
 	maim -s | tee ~/Pictures/screen-shots/$(date '+%F-%T').png | xclip -selection clipboard -t image/png
+
+# Take a screenshot of the entire screen and copy it to the clipboard
+alt + Insert
+    maim -u | xclip -selection clipboard -t image/png
+
+# Take a screenshot of the entire screen and copy it to the clipboard then save it
+alt + ctrl + Insert
+	maim -u | tee ~/Pictures/screen-shots/$(date '+%F-%T').png | xclip -selection clipboard -t image/png
 
 
 #################
@@ -126,10 +126,10 @@ alt + ctrl + Insert
 #################
 # control brightness
 {XF86MonBrightnessDown, XF86MonBrightnessUp}
-    ~/.scripts/brightness.sh    {lower, higher}
+    sudo xbacklight {-dec, -inc} 5
 
 {XF86AudioLowerVolume, XF86AudioRaiseVolume, XF86AudioMute}
-    ~/.scripts/volume.sh        {lower, higher, toggle}
+    amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+10 i3blocks
 
 XF86Sleep
     ~/.scripts/power.sh Sleep
