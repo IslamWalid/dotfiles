@@ -71,7 +71,8 @@ cmd trash ${{
     fi
 
     for s in $selected; do
-        newname="$trashdir/$(date "+%s").$(basename "$s")"
+        touch "$s"
+        newname="$trashdir/$(basename "$s").$(date "+%s")"
         mv "$s" "$newname"
     done
 }}
