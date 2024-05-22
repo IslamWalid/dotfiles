@@ -5,21 +5,21 @@ separator=false
 separator_block_width=4
 
 [memory]
-label=
+label=💾
 command=printf " %.1f%%\n" "$(free | grep Mem | awk '{print $3/$2 * 100.0}')"
 interval=1
 
 [separator]
 
 [mic]
-command=$HOME/.scripts/get_mic.sh
+command=$HOME/.scripts/mic_info.sh
 interval=once
 signal=10
 
 [separator]
 
 [volume]
-command=$HOME/.scripts/get_volume.sh
+command=$HOME/.scripts/volume_info.sh
 interval=once
 signal=10
 
@@ -32,21 +32,21 @@ signal=10
 # [separator]
 
 [date]
-label= 
+label=🗓️
 command=date '+%a, %d %b'
 interval=60
 
 [separator]
 
 [time]
-label= 
+label=🕒
 command=date '+%I:%M %p'
 interval=1
 
 [separator]
 
 [language]
-command=$HOME/.scripts/get_language.sh
+command=$HOME/.scripts/language_info.sh
 interval=once
 signal=12
 
