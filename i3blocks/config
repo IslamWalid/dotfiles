@@ -11,6 +11,13 @@ interval=1
 
 [separator]
 
+[brightness]
+command=$HOME/.scripts/brightness_info.sh
+interval=once
+signal=10
+
+[separator]
+
 [mic]
 command=$HOME/.scripts/mic_info.sh
 interval=once

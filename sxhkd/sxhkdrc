@@ -126,7 +126,7 @@ alt + ctrl + Insert
 #################
 # control brightness
 {XF86MonBrightnessDown, XF86MonBrightnessUp}
-    sudo xbacklight {-dec, -inc} 5
+    sudo xbacklight {-dec, -inc} 5 && pkill -SIGRTMIN+10 i3blocks
 
 {XF86AudioLowerVolume, XF86AudioRaiseVolume, XF86AudioMute}
     amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+10 i3blocks
