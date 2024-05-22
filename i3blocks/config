@@ -14,21 +14,21 @@ interval=1
 [brightness]
 command=$HOME/.scripts/brightness_info.sh
 interval=once
-signal=10
+signal=1
 
 [separator]
 
 [mic]
 command=$HOME/.scripts/mic_info.sh
 interval=once
-signal=10
+signal=2
 
 [separator]
 
 [volume]
 command=$HOME/.scripts/volume_info.sh
 interval=once
-signal=10
+signal=3
 
 [separator]
 
@@ -55,7 +55,7 @@ interval=1
 [language]
 command=$HOME/.scripts/language_info.sh
 interval=once
-signal=12
+signal=4
 
 [separator]
 

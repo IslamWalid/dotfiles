@@ -90,7 +90,7 @@ super + m
 
 # Change keyboard layout
 super + space
-    xkb-switch -n && pkill -SIGRTMIN+12 i3blocks
+    xkb-switch -n && pkill -SIGRTMIN+4 i3blocks
 
 # Toggle touchpad enable
 Scroll_Lock
@@ -98,11 +98,11 @@ Scroll_Lock
 
 # Control volume
 super + {minus, equal, BackSpace}
-    amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+10 i3blocks
+    amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+3 i3blocks
 
 # Control mic
 super + shift + {minus, equal, BackSpace}
-    amixer -D pulse sset Capture {2%-, 2%+, toggle} && pkill -SIGRTMIN+10 i3blocks
+    amixer -D pulse sset Capture {2%-, 2%+, toggle} && pkill -SIGRTMIN+2 i3blocks
 
 # Take a screenshot of the selected portion of the screen and copy it to the clipboard
 Insert
@@ -126,10 +126,10 @@ alt + ctrl + Insert
 #################
 # control brightness
 {XF86MonBrightnessDown, XF86MonBrightnessUp}
-    sudo xbacklight {-dec, -inc} 5 && pkill -SIGRTMIN+10 i3blocks
+    sudo xbacklight {-dec, -inc} 5 && pkill -SIGRTMIN+1 i3blocks
 
 {XF86AudioLowerVolume, XF86AudioRaiseVolume, XF86AudioMute}
-    amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+10 i3blocks
+    amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+3 i3blocks
 
 XF86Sleep
     ~/.scripts/power.sh Sleep
