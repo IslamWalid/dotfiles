@@ -74,7 +74,7 @@ super + shift + r
 
 # Screen lock
 super + x
-    i3lock -i /home/islam/Pictures/wallpapers/png/city.png
+    i3lock -i $(find $HOME/Pictures/lock-screens -mindepth 1 -printf "%T@ %p\n" | sort -rn | head -n 1 | cut -d ' ' -f 2)
 
 # Run dmenu
 Menu
