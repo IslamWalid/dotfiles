@@ -62,7 +62,6 @@ assign [class="jetbrains-idea-ce"] $code
 assign [class="TelegramDesktop"] $telegram
 assign [class="discord"] $discord
 assign [class="okular"] $pdf
-assign [class="anghami"] $music
 assign [class="lf"] $filemanager
 assign [class="Postman"] $devtools
 assign [class="beekeeper-studio"] $devtools
@@ -100,7 +99,6 @@ mode "Transfer" {
     bindsym t exec ~/.scripts/app_handler.sh "mt_telegram"; mode "default"
     bindsym r exec ~/.scripts/app_handler.sh "mt_lf";       mode "default"
     bindsym s exec ~/.scripts/app_handler.sh "mt_music";    mode "default"
-    bindsym a exec ~/.scripts/app_handler.sh "mt_music";    mode "default"
     bindsym d exec ~/.scripts/app_handler.sh "mt_discord";  mode "default"
     bindsym c exec ~/.scripts/app_handler.sh "mt_code";     mode "default"
     bindsym Escape mode "default";

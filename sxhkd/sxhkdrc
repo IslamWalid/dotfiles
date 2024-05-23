@@ -45,8 +45,8 @@ super + Tab
     i3-msg workspace back_and_forth
 
 # Frequent app workspace handler
-super + {w, t, r, s, a, d, c}
-    ~/.scripts/app_handler.sh {browser, telegram, lf, spotify, anghami, discord, code}
+super + {w, t, r, s, d, c}
+    ~/.scripts/app_handler.sh {browser, telegram, lf, spotify, discord, code}
 
 # i3-modes
 super + shift + t
