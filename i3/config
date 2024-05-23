@@ -6,8 +6,9 @@ font pango: 0
 exec nm-applet
 exec picom
 exec sxhkd
-exec feh --bg-center /home/islam/Pictures/wallpapers/jpg/city.jpg
 exec xkbi3 -i3blocks SIGRTMIN+4
+exec $HOME/.scripts/wallpaper.sh -shuffle
+exec_always $HOME/.scripts/wallpaper.sh
 
 # options
 floating_modifier $super
