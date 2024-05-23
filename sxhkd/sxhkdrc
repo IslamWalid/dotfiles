@@ -72,9 +72,9 @@ super + ctrl + r
 super + shift + r
     killall -SIGUSR1 sxhkd
 
-# Screen lock
+# Lock screen
 super + x
-    i3lock -i $(find $HOME/Pictures/lock-screens -mindepth 1 -printf "%T@ %p\n" | sort -rn | head -n 1 | cut -d ' ' -f 2)
+    $HOME/.scripts/lockscreen.sh
 
 # Run dmenu
 Menu
