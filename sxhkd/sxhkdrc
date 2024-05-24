@@ -74,7 +74,7 @@ super + shift + r
 
 # Lock screen
 super + x
-    $HOME/.scripts/lockscreen.sh
+    i3lock -i $(find $HOME/Pictures/wallpapers -mindepth 1 | shuf | head -n 1)
 
 # Run dmenu
 Menu
