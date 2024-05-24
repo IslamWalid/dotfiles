@@ -5,8 +5,8 @@ separator=false
 separator_block_width=4
 
 [memory]
-label=💾
-command=printf " %.1f%%\n" "$(free | grep Mem | awk '{print $3/$2 * 100.0}')"
+label=💾 
+command=printf "%.1f%%\n" "$(free | grep Mem | awk '{print $3/$2 * 100.0}')"
 interval=1
 
 [separator]
@@ -32,21 +32,15 @@ signal=3
 
 [separator]
 
-# [battery]
-# command=$HOME/.scripts/battery.sh
-# interval=1
-#
-# [separator]
-
 [date]
-label=🗓️
+label=🗓️ 
 command=date '+%a, %d %b'
 interval=60
 
 [separator]
 
 [time]
-label=🕒
+label=🕒 
 command=date '+%I:%M %p'
 interval=1
 
