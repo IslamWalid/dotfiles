@@ -1,0 +1,26 @@
+[global]
+    font = monospace 14
+    width = 500
+    notification_limit = 3
+    transparency = 0
+    sort = urgency_descending
+    icon_corner_radius = 5
+
+[urgency_low]
+    background = "#dddddd"
+    foreground = "#444444"
+    timeout = 5
+
+[urgency_normal]
+    background = "#285577"
+    foreground = "#ffffff"
+    timeout = 5
+
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 0
+    override_pause_level = 150
+
+# vim: ft=cfg
