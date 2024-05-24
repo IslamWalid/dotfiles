@@ -6,7 +6,6 @@ font pango: 0
 exec picom
 exec sxhkd
 exec xkbi3 -i3blocks SIGRTMIN+4
-exec $HOME/.scripts/wallpaper.sh -shuffle
 exec_always $HOME/.scripts/wallpaper.sh
 
 # options
