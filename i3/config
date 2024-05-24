@@ -87,7 +87,7 @@ bar {
         #                   border      background   text
         focused_workspace   #17171780   #17171780    #FFFFFFFF
         inactive_workspace  #17171780   #17171780    #70707033
-        urgent_workspace    #17171780   #17171780    #C40808FF
+        urgent_workspace    #17171780   #17171780    #F85454FF
         binding_mode        #17171780   #17171780    #FFFFFFFF
 	}
 }
