@@ -46,6 +46,12 @@ interval=1
 
 [separator]
 
+[internet]
+command=$HOME/.scripts/internet_info.sh
+interval=1
+
+[separator]
+
 [language]
 command=$HOME/.scripts/language_info.sh
 interval=once

@@ -70,6 +70,7 @@ for_window [instance="spotify"] move to workspace $music
 # floating windows
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qBittorrent"] floating enable
+for_window [class="nmtui"] floating enable
 
 # i3block
 bar {
