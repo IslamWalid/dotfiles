@@ -82,14 +82,14 @@ bar {
     workspace_min_width 30
 
     colors {
-        background  #17171780
-        separator   #757575FF
+        background  #171717B3
+        separator   #757575B3
 
         #                   border      background   text
-        focused_workspace   #17171780   #17171780    #FFFFFFFF
-        inactive_workspace  #17171780   #17171780    #70707033
-        urgent_workspace    #17171780   #17171780    #F85454FF
-        binding_mode        #17171780   #17171780    #FFFFFFFF
+        focused_workspace   #171717B3   #171717B3    #FFFFFFFF
+        inactive_workspace  #171717B3   #171717B3    #707070FF
+        urgent_workspace    #171717B3   #171717B3    #E50914FF
+        binding_mode        #171717B3   #171717B3    #FFFFFFFF
 	}
 }
 
