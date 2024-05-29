@@ -10,10 +10,9 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
 # nvim aliases
+alias nvim='/usr/local/bin/nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias sudo='sudo '
-alias q='exit'
 
 # pacman
 alias i='sudo pacman -S'
@@ -47,6 +46,7 @@ alias vlf='cd ~/.dotfiles/lf; nvim .'
 alias vscr='cd ~/.scripts/; nvim .'
 
 # misc
+alias q='exit'
 alias lg='lazygit'
 alias zr='exec zsh'
 alias rmdir='rm -rf'
