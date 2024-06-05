@@ -27,6 +27,7 @@ return {
       },
       {
         "rcarriga/nvim-dap-ui",
+        dependencies = { "nvim-neotest/nvim-nio" },
         opts = {
           icons = { expanded = "▾", collapsed = "▸" },
           mappings = {

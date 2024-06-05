@@ -20,8 +20,11 @@ M.setup = function()
         name = "Attach Process",
         type = "pwa-node",
         request = "attach",
+        cwd = "${workspaceFolder}",
         processId = function()
-          require("dap.utils").pick_process("node --inspect")
+          require("dap.utils").pick_process({
+            filter = "--inspect",
+          })
         end,
       },
       {
