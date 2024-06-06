@@ -13,21 +13,35 @@ return {
           "SmiteshP/nvim-navic",
           "MunifTanjim/nui.nvim",
         },
-        opts = {
-          lsp = { auto_attach = true },
-          window = {
-            border = "rounded",
-            size = {
-              width = "100%",
-              height = "90%",
+        opts = function()
+          return {
+            lsp = { auto_attach = true },
+            window = {
+              border = "rounded",
+              size = {
+                width = "90%",
+                height = "90%",
+              },
+              sections = {
+                left = { size = "5%" },
+                mid = { size = "50%" },
+                right = { preview = "always" },
+              },
             },
-            sections = {
-              left = { size = "10%" },
-              mid = { size = "45%" },
-              right = { preview = "always" },
+            mappings = {
+              ["t"] = require("nvim-navbuddy.actions").telescope({
+                layout_strategy = "horizontal",
+                layout_config = {
+                  height = 0.9,
+                  width = 0.9,
+                  prompt_position = "bottom",
+                  preview_width = 0.6,
+                  scroll_speed = 1,
+                },
+              }),
             },
-          },
-        },
+          }
+        end,
       },
       {
         "j-hui/fidget.nvim",
