@@ -55,6 +55,7 @@ bindsym $super+Shift+7 move container to workspace $tmp3
 # default workspaces
 assign [class="mpv"] $watch
 assign [class="syncplay"] $watch
+assign [title="Brave"] $browser
 assign [class="Brave-browser"] $browser
 assign [class="jetbrains-idea-ce"] $code
 assign [class="TelegramDesktop"] $telegram
