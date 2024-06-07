@@ -6,7 +6,7 @@ separator_block_width=4
 
 [memory]
 label=💾 
-command=printf "%.1f%%\n" "$(free | grep Mem | awk '{print $3/$2 * 100.0}')"
+command=free -h | grep Mem | awk '{print $3}'
 interval=1
 
 [separator]
