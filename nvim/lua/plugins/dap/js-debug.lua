@@ -26,6 +26,16 @@ M.setup = function()
             filter = "--inspect",
           })
         end,
+        port = function()
+          local prompt = vim.fn.input("port(9229): ")
+          local port = tonumber(prompt)
+
+          if port ~= nil then
+            return port
+          end
+
+          return 9229
+        end,
       },
       {
         name = "Debug Jest Tests",
