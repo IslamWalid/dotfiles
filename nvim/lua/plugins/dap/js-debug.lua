@@ -1,12 +1,16 @@
 local M = {}
 
 M.setup = function()
+  local filetypes = { "javascript", "typescript" }
+
   require("dap-vscode-js").setup({
     debugger_path = os.getenv("HOME") .. "/.opt/vscode-js-debug",
     adapters = { "pwa-node" },
   })
 
-  for _, language in ipairs({ "javascript", "typescript" }) do
+  require("dap.ext.vscode").load_launchjs("./vscode/launch.json", filetypes)
+
+  for _, language in ipairs(filetypes) do
     require("dap").configurations[language] = {
       {
         name = "Debug File",
@@ -21,21 +25,7 @@ M.setup = function()
         type = "pwa-node",
         request = "attach",
         cwd = "${workspaceFolder}",
-        processId = function()
-          require("dap.utils").pick_process({
-            filter = "--inspect",
-          })
-        end,
-        port = function()
-          local prompt = vim.fn.input("port(9229): ")
-          local port = tonumber(prompt)
-
-          if port ~= nil then
-            return port
-          end
-
-          return 9229
-        end,
+        port = 9229,
       },
       {
         name = "Debug Jest Tests",
