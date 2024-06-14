@@ -2,6 +2,10 @@ local M = {}
 
 local telescope_buitin = require("telescope.builtin")
 
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
 M.on_attach = function(_, bufnr)
   local function opts(desc)
     return { desc = "Lsp: " .. desc, noremap = true, silent = true, buffer = bufnr }

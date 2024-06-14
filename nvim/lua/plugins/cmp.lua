@@ -48,10 +48,12 @@ return {
           completion = {
             max_height = 40,
             max_width = 30,
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
           },
           documentation = {
             max_height = 20,
             max_width = 60,
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
           },
         },
         snippet = {

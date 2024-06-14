@@ -1,7 +1,7 @@
 local M = {}
 
 local open_float_opts = {
-  border = "none",
+  border = "rounded",
   scope = "line",
   source = "always",
   severity_sort = true,
