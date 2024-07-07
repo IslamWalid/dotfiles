@@ -77,7 +77,7 @@ super + x
     i3lock -i $(find $HOME/Pictures/wallpapers -mindepth 1 | shuf | head -n 1)
 
 # Run dmenu
-Menu
+super + d
 	dmenu_run
 
 # Run terminal
