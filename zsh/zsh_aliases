@@ -10,7 +10,7 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 
 # nvim aliases
-alias nvim='/usr/local/bin/nvim'
+alias nvim='/usr/bin/nvim'
 alias vi='nvim'
 alias vim='nvim'
 
@@ -29,7 +29,7 @@ alias yi='yay -S'
 alias yr='yay -Rns'
 alias yc='yay -Yc'     # uninstall unneeded packages
 alias pc='yay -Scc'    # clean packages cache
-alias yu='yay'         # sync database and update both pacman and yay packages
+alias yu='yay -Su'     # update aur packages
 alias ys='yay -Ss'
 
 # tmux
