@@ -45,8 +45,8 @@ super + Tab
     i3-msg workspace back_and_forth
 
 # Frequent app workspace handler
-super + {w, t, r, s, d, c}
-    ~/.scripts/app_handler.sh {browser, telegram, lf, spotify, discord, code}
+super + {w, t, r, s, c}
+    ~/.scripts/app_handler.sh {browser, telegram, lf, spotify, code}
 
 # i3-modes
 super + shift + t
@@ -97,11 +97,11 @@ Scroll_Lock
     ~/.scripts/touchpad_toggle.sh
 
 # Control volume
-super + {minus, equal, BackSpace}
+super + {minus, equal, 0}
     amixer -D pulse sset Master {2%-, 2%+, toggle} && pkill -SIGRTMIN+3 i3blocks
 
 # Control mic
-super + shift + {minus, equal, BackSpace}
+super + shift + {minus, equal, 0}
     amixer -D pulse sset Capture {2%-, 2%+, toggle} && pkill -SIGRTMIN+2 i3blocks
 
 # Take a screenshot of the selected portion of the screen and copy it to the clipboard

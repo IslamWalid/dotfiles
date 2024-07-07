@@ -27,12 +27,11 @@ set $telegram "4"
 set $code "5"
 set $devtools "6"
 set $music "7"
-set $discord "8"
-set $watch "9"
-set $pdf "10"
-set $tmp1 "11"
-set $tmp2 "12"
-set $tmp3 "13"
+set $watch "8"
+set $pdf "9"
+set $tmp1 "10"
+set $tmp2 "11"
+set $tmp3 "12"
 
 # switch to workspace
 bindsym $super+1 workspace $terminal
@@ -59,7 +58,6 @@ assign [title="Brave"] $browser
 assign [class="Brave-browser"] $browser
 assign [class="jetbrains-idea-ce"] $code
 assign [class="TelegramDesktop"] $telegram
-assign [class="discord"] $discord
 assign [class="okular"] $pdf
 assign [class="lf"] $filemanager
 assign [class="Postman"] $devtools
@@ -69,7 +67,7 @@ assign [class="MongoDB Compass"] $devtools
 for_window [instance="spotify"] move to workspace $music
 
 # floating windows
-for_window [class="Pavucontrol"] floating enable
+for_window [class="pavucontrol"] floating enable
 for_window [class="qBittorrent"] floating enable
 for_window [class="nmtui"] floating enable
 
@@ -99,7 +97,6 @@ mode "Transfer" {
     bindsym t exec ~/.scripts/app_handler.sh "mt_telegram"; mode "default"
     bindsym r exec ~/.scripts/app_handler.sh "mt_lf";       mode "default"
     bindsym s exec ~/.scripts/app_handler.sh "mt_music";    mode "default"
-    bindsym d exec ~/.scripts/app_handler.sh "mt_discord";  mode "default"
     bindsym c exec ~/.scripts/app_handler.sh "mt_code";     mode "default"
     bindsym Escape mode "default";
 }
