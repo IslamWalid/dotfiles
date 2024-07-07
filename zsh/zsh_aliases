@@ -33,6 +33,7 @@ alias yu='yay -Su'     # update aur packages
 alias ys='yay -Ss'
 
 # tmux
+alias tl='~/.scripts/tmuxp_load.sh'
 alias ta='tmux attach'
 alias tas='tmux attach-session -t '
 alias tls='tmux list-sessions'

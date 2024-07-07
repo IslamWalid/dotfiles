@@ -82,7 +82,7 @@ super + d
 
 # Run terminal
 super + Return
-	i3-msg exec $TERMINAL
+	i3-msg exec $TERM
 
 # Mount usb drives
 super + m
