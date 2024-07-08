@@ -90,7 +90,7 @@ super + m
 
 # Change keyboard layout
 super + space
-    xkb-switch -n && pkill -SIGRTMIN+4 i3blocks
+    xkb-switch -n && pkill -SIGRTMIN+5 i3blocks
 
 # Toggle touchpad enable
 Scroll_Lock
