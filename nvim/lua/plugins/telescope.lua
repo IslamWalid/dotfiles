@@ -12,6 +12,9 @@ return {
         width = 0.9,
         preview_width = 0.6,
         scroll_speed = 1,
+        horizontal = {
+          preview_cutoff = 0,
+        },
       },
     },
   },
