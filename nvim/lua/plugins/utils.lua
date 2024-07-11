@@ -17,19 +17,6 @@ return {
     cmd = { "TodoTelescope", "TodoQuickFix" },
   },
   {
-    "williamboman/mason.nvim",
-    build = ":MasonUpdate",
-    opts = {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    },
-  },
-  {
     "toppair/peek.nvim",
     build = "deno task --quiet build:fast",
     keys = {
