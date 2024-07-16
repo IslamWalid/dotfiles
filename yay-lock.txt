@@ -1,0 +1,13 @@
+beekeeper-studio-bin 4.2.9-1
+beekeeper-studio-bin-debug 4.2.9-1
+brave-bin 1:1.67.123-2
+ctpv-git r264.4efa0f9-1
+ctpv-git-debug r264.4efa0f9-1
+dockerfile-language-server 0.13.0-1
+mongodb-compass 1.43.4-1
+postman-bin 11.3.2-1
+spotify 1:1.2.40.599-1
+spotify-adblock 1:1.0.3-2
+ttf-monaco 6.1-7
+xkb-switch 1.8.5-1
+yay-bin 12.3.5-1
