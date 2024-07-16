@@ -2,7 +2,7 @@
 autoload -U colors && colors
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.cache/zsh/.histfile
+HISTFILE=~/.cache/zsh/histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
