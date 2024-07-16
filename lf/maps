@@ -34,8 +34,8 @@ map g/ cd /
 map gm cd /mnt/
 map gc cd ~/.config/
 map go cd ~/.opt/
-map gd cd ~/Downloads/
-map gp cd ~/Projects/
+map gd cd ~/downloads/
+map gp cd ~/projects/
 map gD cd ~/.dotfiles/
 map gl cd ~/.local/
 
