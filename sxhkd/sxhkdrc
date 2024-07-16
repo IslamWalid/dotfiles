@@ -78,7 +78,7 @@ super + x
 
 # Run dmenu
 super + d
-	dmenu_run
+	rofi -show drun
 
 # Run terminal
 super + Return
@@ -142,3 +142,5 @@ XF86Sleep
 
 XF86HomePage
     $BROWSER
+
+# vim:ft=sxhkdrc
