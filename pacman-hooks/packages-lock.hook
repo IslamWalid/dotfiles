@@ -8,4 +8,4 @@ Target = *
 [Action]
 When = PostTransaction
 Description = Generating packages lock files...
-Exec = /bin/sh -c "pacman -Q > /home/islam/.dotfiles/pacman-lock.txt && pacman -Qm > /home/islam/.dotfiles/yay-lock.txt"
+Exec = /bin/su -c "/home/islam/.scripts/packages-lock.sh" islam
