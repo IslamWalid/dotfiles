@@ -13,7 +13,7 @@ M.setup = function()
   for _, language in ipairs(filetypes) do
     require("dap").configurations[language] = {
       {
-        name = "Debug File",
+        name = "Debug file",
         type = "pwa-node",
         request = "launch",
         program = "${file}",
@@ -21,11 +21,20 @@ M.setup = function()
       },
       {
         -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-        name = "Attach Process",
+        name = "Attach process (default port)",
         type = "pwa-node",
         request = "attach",
         cwd = "${workspaceFolder}",
         port = 9229,
+      },
+      {
+        name = "Attach process (select port)",
+        type = "pwa-node",
+        request = "attach",
+        cwd = "${workspaceFolder}",
+        port = function()
+          return vim.fn.input("Port: ")
+        end,
       },
       {
         name = "Debug Jest Tests",
