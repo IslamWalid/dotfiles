@@ -21,6 +21,22 @@ return {
   config = function(_, opts)
     local telescope = require("telescope")
     local builtin = require("telescope.builtin")
+    local actions = require("telescope.actions")
+
+    opts.defaults.mappings = {
+      i = {
+        ["<C-j>"] = actions.preview_scrolling_down,
+        ["<C-k>"] = actions.preview_scrolling_up,
+        ["<C-h>"] = actions.preview_scrolling_left,
+        ["<C-l>"] = actions.preview_scrolling_right,
+      },
+      n = {
+        ["J"] = actions.preview_scrolling_down,
+        ["K"] = actions.preview_scrolling_up,
+        ["H"] = actions.preview_scrolling_left,
+        ["L"] = actions.preview_scrolling_right,
+      },
+    }
 
     telescope.load_extension("live_grep_args")
     telescope.setup(opts)
