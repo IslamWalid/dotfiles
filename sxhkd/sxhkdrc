@@ -137,10 +137,4 @@ shift + {XF86AudioLowerVolume, XF86AudioRaiseVolume}
 XF86AudioMicMute
     amixer -D pulse sset Capture toggle && pkill -SIGRTMIN+2 i3blocks
 
-XF86Sleep
-    ~/.scripts/power.sh Sleep
-
-XF86HomePage
-    $BROWSER
-
 # vim:ft=sxhkdrc
