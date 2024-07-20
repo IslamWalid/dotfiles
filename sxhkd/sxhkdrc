@@ -137,4 +137,10 @@ shift + {XF86AudioLowerVolume, XF86AudioRaiseVolume}
 XF86AudioMicMute
     amixer -D pulse sset Capture toggle && pkill -SIGRTMIN+2 i3blocks
 
+XF86Favorites
+    telephony dialer
+
+shift + XF86Favorites
+    telephony device
+
 # vim:ft=sxhkdrc

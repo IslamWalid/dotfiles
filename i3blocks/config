@@ -2,7 +2,7 @@
 full_text=" "
 color=#FFFFFFFF
 separator=false
-separator_block_width=4
+separator_block_width=8
 
 [memory]
 label=💾 
@@ -62,7 +62,7 @@ signal=5
 
 [internet]
 command=$HOME/.scripts/internet_info.sh
-interval=2
+interval=1
 
 [separator]
 
