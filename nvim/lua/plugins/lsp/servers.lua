@@ -46,7 +46,7 @@ M.setup = function()
 
   for _, server in ipairs(servers) do
     local default_config = {
-      on_attach = M.on_attach,
+      on_attach = require("utils.lsp").on_attach,
       capabilities = M.capabilities,
       flags = M.lsp_flags,
     }

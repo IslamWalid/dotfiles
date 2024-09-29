@@ -57,16 +57,15 @@ return {
           return {
             sources = {
               -- formatting
-              null_ls.builtins.formatting.gofumpt,
+              null_ls.builtins.formatting.gofmt,
               null_ls.builtins.formatting.stylua,
               null_ls.builtins.formatting.eslint_d,
               null_ls.builtins.formatting.shfmt.with({ extra_args = { "-ci" } }),
 
               -- diagnostics
               null_ls.builtins.diagnostics.eslint_d,
-              null_ls.builtins.diagnostics.staticcheck,
             },
-            on_attach = require("utils.lsp").on_attach,
+            on_attach = require("utils.null-ls").on_attach,
           }
         end,
       },
