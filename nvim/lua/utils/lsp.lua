@@ -23,10 +23,6 @@ M.on_attach = function(_, bufnr)
   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename"))
   vim.keymap.set("n", "<leader>qd", vim.diagnostic.setqflist, opts("Diagnostics Quick Fix"))
   vim.keymap.set("n", "<leader>nv", require("nvim-navbuddy").open, opts("NavBuddy Open"))
-  vim.keymap.set("n", "<leader>fm", function()
-    vim.lsp.buf.format()
-    vim.cmd.write()
-  end, opts("Buffer Format"))
 end
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
