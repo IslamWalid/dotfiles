@@ -15,6 +15,14 @@ M.setup = function()
 
   dap.configurations.go = {
     {
+      name = "Launch Package",
+      type = "delve",
+      request = "launch",
+      program = function()
+        return vim.fn.expand("%:p:h")
+      end,
+    },
+    {
       name = "Attach Process",
       type = "delve",
       request = "attach",
@@ -32,12 +40,23 @@ M.setup = function()
       program = "${fileDirname}",
     },
     {
+      name = "Launch Package (Givesync)",
+      type = "delve",
+      request = "launch",
+      program = function()
+        return vim.fn.expand("%:p:h")
+      end,
+      env = {
+        GIVESYNC_CONFIG = "/home/islam/work/lasting-dynamics/givesync-api/play/config.local.yaml",
+      },
+    },
+    {
       name = "Attach Process (Givesync)",
       type = "delve",
       request = "attach",
       mode = "local",
       processId = function()
-        return dap_utils.pick_process({ filter = "./build/api" })
+        return dap_utils.pick_process({ filter = "./build" })
       end,
     },
     {
@@ -55,7 +74,7 @@ M.setup = function()
         end
       end,
       env = {
-        GIVESYNC_CONFIG = "/home/islam/work/lasting-dynamics/givesync-api/play/config.test.local.yaml",
+        GIVESYNC_CONFIG = "/home/islam/work/lasting-dynamics/givesync-api/play/config.local.yaml",
       },
     },
   }
