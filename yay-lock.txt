@@ -1,5 +1,4 @@
 beekeeper-studio-bin 5.0.9-1
-beekeeper-studio-bin-debug 5.0.9-1
 brave-bin 1:1.75.178-1
 ctpv-git r264.4efa0f9-1
 dockerfile-language-server 0.13.0-1
