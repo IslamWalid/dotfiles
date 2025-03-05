@@ -24,7 +24,15 @@ export PLUGINS_DIR="$XDG_CONFIG_HOME/zsh/plugins"
 # Theme
 setopt PROMPT_SUBST
 source $PLUGINS_DIR/ohmyzsh/lib/git.zsh
-source $PLUGINS_DIR/ohmyzsh/themes/robbyrussell.zsh-theme
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+PROMPT='%{$fg_bold[blue]%}[%{$fg_bold[red]%}%n%{$fg_bold[blue]%}@%m] %{$fg_bold[cyan]%}%c%{$reset_color%} $(git_prompt_info)
+'
+PROMPT+="%(?:%{$fg_bold[green]%}➜  %{$reset_color%}:%{$fg_bold[red]%}➜  %{$reset_color%})"
 
 # Plugins
 source $PLUGINS_DIR/fzf-tab/fzf-tab.plugin.zsh
