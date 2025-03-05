@@ -1,12 +1,13 @@
-import = ["/home/islam/.config/alacritty/themes/catppuccin/mocha.toml"]
+[general]
 live_config_reload = true
+import = ["/home/islam/.config/alacritty/themes/catppuccin/mocha.toml"]
 
 [cursor.style]
 blinking = "Always"
 shape = "Block"
 
 [font]
-size = 12
+size = 14
 
 [font.bold]
 family = "terminal"
@@ -73,5 +74,5 @@ general = "Alacritty"
 instance = "Alacritty"
 
 [window.padding]
-x = 6
-y = 6
+x = 10
+y = 10
