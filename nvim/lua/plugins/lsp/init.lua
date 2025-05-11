@@ -51,7 +51,8 @@ return {
         },
       },
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
+        dependencies = "nvimtools/none-ls-extras.nvim",
         opts = function()
           local null_ls = require("null-ls")
           return {
@@ -59,11 +60,11 @@ return {
               -- formatting
               null_ls.builtins.formatting.gofmt,
               null_ls.builtins.formatting.stylua,
-              null_ls.builtins.formatting.eslint_d,
               null_ls.builtins.formatting.shfmt.with({ extra_args = { "-ci" } }),
+              require("none-ls.formatting.eslint_d"),
 
               -- diagnostics
-              null_ls.builtins.diagnostics.eslint_d,
+              require("none-ls.diagnostics.eslint_d"),
             },
             on_attach = require("utils.null-ls").on_attach,
           }
