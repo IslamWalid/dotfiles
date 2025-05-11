@@ -5,7 +5,7 @@ M.setup = function()
 
   local servers = {
     "gopls",
-    "tsserver",
+    "ts_ls",
     "lua_ls",
     "clangd",
     "bashls",
