@@ -3,6 +3,11 @@ local silent = { silent = true }
 local noremap = { noremap = true }
 local silent_noremap = { silent = true, noremap = true }
 
+vim.keymap.del("n", "grn")
+vim.keymap.del({ "n", "x" }, "gra")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gri")
+
 -- Replace with register
 set("n", "gr", "<Plug>ReplaceWithRegisterOperator")
 set("x", "gr", "<Plug>ReplaceWithRegisterVisual")
