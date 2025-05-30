@@ -27,30 +27,33 @@ set $browser "3"
 set $telegram "4"
 set $code "5"
 set $devtools "6"
-set $music "7"
-set $watch "8"
-set $pdf "9"
-set $tmp1 "10"
-set $tmp2 "11"
-set $tmp3 "12"
+set $slack "7"
+set $music "8"
+set $watch "9"
+set $pdf "10"
+set $tmp1 "11"
+set $tmp2 "12"
+set $tmp3 "13"
 
 # switch to workspace
 bindsym $super+1 workspace $terminal
 bindsym $super+2 workspace $devtools
-bindsym $super+3 workspace $watch
-bindsym $super+4 workspace $pdf
-bindsym $super+5 workspace $tmp1
-bindsym $super+6 workspace $tmp2
-bindsym $super+7 workspace $tmp3
+bindsym $super+3 workspace $slack
+bindsym $super+4 workspace $watch
+bindsym $super+5 workspace $pdf
+bindsym $super+6 workspace $tmp1
+bindsym $super+7 workspace $tmp2
+bindsym $super+8 workspace $tmp3
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace $terminal
 bindsym $super+Shift+2 move container to workspace $devtools
-bindsym $super+Shift+3 move container to workspace $watch
-bindsym $super+Shift+4 move container to workspace $pdf
-bindsym $super+Shift+5 move container to workspace $tmp1
-bindsym $super+Shift+6 move container to workspace $tmp2
-bindsym $super+Shift+7 move container to workspace $tmp3
+bindsym $super+Shift+3 move container to workspace $slack
+bindsym $super+Shift+4 move container to workspace $watch
+bindsym $super+Shift+5 move container to workspace $pdf
+bindsym $super+Shift+6 move container to workspace $tmp1
+bindsym $super+Shift+7 move container to workspace $tmp2
+bindsym $super+Shift+8 move container to workspace $tmp3
 
 # default workspaces
 assign [class="mpv"] $watch
@@ -58,12 +61,14 @@ assign [class="syncplay"] $watch
 assign [title="Brave"] $browser
 assign [class="Brave-browser"] $browser
 assign [class="jetbrains-idea-ce"] $code
+assign [class="Cursor"] $code
 assign [class="TelegramDesktop"] $telegram
 assign [class="okular"] $pdf
 assign [class="lf"] $filemanager
 assign [class="Postman"] $devtools
 assign [class="beekeeper-studio"] $devtools
 assign [class="MongoDB Compass"] $devtools
+assign [class="Slack"] $slack
 
 for_window [instance="spotify"] move to workspace $music
 
