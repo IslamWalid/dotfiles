@@ -3,11 +3,12 @@ set $super Mod4
 
 font pango: 0
 
-exec picom
-exec sxhkd
-exec xkbi3 -i3blocks SIGRTMIN+5
+exec --no-startup-id picom
+exec --no-startup-id sxhkd
+exec --no-startup-id xkbi3 -i3blocks SIGRTMIN+5
 exec blueman-applet
-exec_always $HOME/.scripts/wallpaper.sh
+exec_always --no-startup-id $HOME/.scripts/wallpaper.sh
+exec --no-startup-id $HOME/.scripts/bluetooth_monitor.sh
 
 # options
 floating_modifier $super
