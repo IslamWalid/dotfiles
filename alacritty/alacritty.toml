@@ -7,7 +7,7 @@ blinking = "Always"
 shape = "Block"
 
 [font]
-size = 14
+size = 10
 
 [font.bold]
 family = "terminal"
