@@ -1,7 +1,6 @@
 acpilight 1.2-3
 arc-gtk-theme 20221218-2
 beekeeper-studio-bin 5.3.2-1
-beekeeper-studio-bin-debug 5.3.2-1
 bitwarden-bin 2025.7.0-1
 brave-bin 1:1.80.125-1
 ctpv-git r264.4efa0f9-1
