@@ -84,6 +84,7 @@ python-pynvim 0.6.0-1
 qbittorrent 5.1.4-1
 ripgrep 15.1.0-1
 rofi 2.0.0-1
+rsync 3.4.1-2
 shfmt 3.12.0-1
 sof-firmware 2025.05.1-1
 sshfs 3.7.3-3
