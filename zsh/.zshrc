@@ -5,6 +5,9 @@ autoload -U colors && colors
 HISTFILE=~/.cache/zsh/histfile
 HISTSIZE=10000
 SAVEHIST=10000
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
 # Version control info
 autoload -Uz vcs_info
