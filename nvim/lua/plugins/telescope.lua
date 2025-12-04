@@ -10,7 +10,7 @@ return {
       layout_config = {
         height = 0.9,
         width = 0.9,
-        preview_width = 0.6,
+        preview_width = 0.55,
         scroll_speed = 1,
         horizontal = {
           preview_cutoff = 0,

@@ -19,12 +19,12 @@ return {
             window = {
               border = "rounded",
               size = {
-                width = "90%",
+                width = "95%",
                 height = "90%",
               },
               sections = {
-                left = { size = "5%" },
-                mid = { size = "50%" },
+                left = { size = "10%" },
+                mid = { size = "30%" },
                 right = { preview = "always" },
               },
             },
