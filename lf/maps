@@ -10,7 +10,7 @@ map ee extract
 map d
 map dd cut
 map dD trash
-map <delete> trash
+map dX delete
 
 map y
 map yy copy
