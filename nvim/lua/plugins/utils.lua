@@ -11,6 +11,12 @@ return {
     keys = { { "gx", vim.cmd.Browse, mode = { "n", "x" } } },
   },
   {
+    'stevearc/oil.nvim',
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = true,
+    cmd = { "Oil" },
+  },
+  {
     "folke/todo-comments.nvim",
     opts = { signs = false },
     dependencies = { "nvim-lua/plenary.nvim" },
