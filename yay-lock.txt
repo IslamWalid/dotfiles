@@ -2,12 +2,12 @@ acpilight 1.2-3
 arc-gtk-theme 20221218-2
 beekeeper-studio-bin 5.4.12-1
 bitwarden-bin 2025.11.2-1
-brave-bin 1:1.84.141-1
+brave-bin 1:1.85.111-1
 ctpv-git r264.4efa0f9-1
-cursor-bin 2.1.46-1
+cursor-bin 2.1.50-1
 dockerfile-language-server 0.15.0-1
 mongodb-compass-bin 1.48.2-1
-postman-bin 11.73.5-1
+postman-bin 11.75.1-1
 rar 7.12-1
 slack-desktop 4.46.104-1
 spotify 1:1.2.77.358-1
