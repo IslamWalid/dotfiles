@@ -1,8 +1,6 @@
 local M = {}
 
 M.setup = function()
-  local lspconfig = require("lspconfig")
-
   local servers = {
     "gopls",
     "ts_ls",
@@ -14,7 +12,7 @@ M.setup = function()
   }
 
   local additional_config = {
-    tsserver = {
+    ts_ls = {
       init_options = {
         preferences = {
           disableSuggestions = true,
@@ -57,7 +55,8 @@ M.setup = function()
       end
     end
 
-    lspconfig[server].setup(default_config)
+    vim.lsp.config(server, default_config)
+    vim.lsp.enable(server)
   end
 end
 
