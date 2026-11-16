@@ -2,10 +2,6 @@ local M = {}
 
 local telescope_builtin = require("telescope.builtin")
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
-})
-
 M.on_attach = function(client, bufnr)
   local function opts(desc)
     return { desc = "Lsp: " .. desc, noremap = true, silent = true, buffer = bufnr }
@@ -16,7 +12,9 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.documentRangeFormattingProvider = false
   end
 
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Documentation Hover"))
+  vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({ border = "rounded" })
+  end, opts("Documentation Hover"))
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("Go to Definition"))
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts("Go to Implementation"))
   vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, opts("Go to Type Definition"))
