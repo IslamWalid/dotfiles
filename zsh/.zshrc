@@ -37,6 +37,8 @@ PROMPT='%{$fg_bold[blue]%}[%{$fg_bold[red]%}%n%{$fg_bold[blue]%}@%m] %{$fg_bold[
 '
 PROMPT+="%(?:%{$fg_bold[green]%}➜  %{$reset_color%}:%{$fg_bold[red]%}➜  %{$reset_color%})"
 
+source /usr/share/nvm/init-nvm.sh
+
 # Plugins
 source $PLUGINS_DIR/fzf-tab/fzf-tab.plugin.zsh
 source $PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
