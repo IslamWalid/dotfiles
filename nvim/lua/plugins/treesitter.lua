@@ -1,53 +1,45 @@
+local ensure_installed = {
+  "c",
+  "go",
+  "vim",
+  "vimdoc",
+  "lua",
+  "bash",
+  "markdown",
+  "markdown_inline",
+  "make",
+  "diff",
+  "json",
+  "gitcommit",
+  "git_rebase",
+  "gitattributes",
+  "gitignore",
+  "sxhkdrc",
+  "toml",
+  "dockerfile",
+  "javascript",
+  "typescript",
+  "sql",
+}
+
 return {
-  "andymass/vim-matchup",
+  {
+    "andymass/vim-matchup",
+    init = function()
+      -- Replaces the old treesitter `disable_virtual_text` module option:
+      -- don't show the offscreen match in a popup/virtual text.
+      vim.g.matchup_matchparen_offscreen = {}
+    end,
+  },
   "HiPhish/rainbow-delimiters.nvim",
   "nvim-treesitter/nvim-treesitter-context",
-  "nvim-treesitter/nvim-treesitter-textobjects",
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "c",
-        "go",
-        "vim",
-        "vimdoc",
-        "lua",
-        "bash",
-        "markdown",
-        "markdown_inline",
-        "make",
-        "diff",
-        "json",
-        "gitcommit",
-        "git_rebase",
-        "gitattributes",
-        "gitignore",
-        "sxhkdrc",
-        "toml",
-        "dockerfile",
-        "javascript",
-        "typescript",
-        "sql",
-      },
-
-      highlight = { enable = true },
-
-      matchup = { enable = true, disable_virtual_text = true },
-
-      rainbow = { enable = true, extended_mode = true, max_file_lines = nil },
-
-      textobjects = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
+    config = function()
+      require("nvim-treesitter-textobjects").setup({
         select = {
-          enable = true,
           lookahead = true,
-          keymaps = {
-            ["ic"] = "@class.inner",
-            -- ["ac"] = "@class.outer",
-            ["if"] = "@function.inner",
-            ["af"] = "@function.outer",
-            ["ia"] = "@parameter.inner",
-            ["aa"] = "@parameter.outer",
-          },
           selection_modes = {
             ["@parameter.outer"] = "v", -- charwise
             ["@function.outer"] = "V",  -- linewise
@@ -55,23 +47,48 @@ return {
           },
           include_surrounding_whitespace = false,
         },
-        swap = {
-          enable = true,
-          swap_next = {
-            ["<leader>s"] = "@parameter.inner",
-          },
-          swap_previous = {
-            ["<leader>S"] = "@parameter.inner",
-          },
-        },
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      })
+
+      local select = require("nvim-treesitter-textobjects.select")
+      local swap = require("nvim-treesitter-textobjects.swap")
+
+      local select_maps = {
+        ["ic"] = "@class.inner",
+        ["if"] = "@function.inner",
+        ["af"] = "@function.outer",
+        ["ia"] = "@parameter.inner",
+        ["aa"] = "@parameter.outer",
+      }
+      for lhs, query in pairs(select_maps) do
+        vim.keymap.set({ "x", "o" }, lhs, function()
+          select.select_textobject(query, "textobjects")
+        end, { desc = "Select " .. query })
+      end
+
+      vim.keymap.set("n", "<leader>s", function()
+        swap.swap_next("@parameter.inner")
+      end, { desc = "Swap next parameter" })
+      vim.keymap.set("n", "<leader>S", function()
+        swap.swap_previous("@parameter.inner")
+      end, { desc = "Swap previous parameter" })
     end,
-    build = function()
-      local update = require("nvim-treesitter.install").update({ with_sync = true })
-      update()
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter").install(ensure_installed)
+
+      -- The `main` branch no longer enables highlighting automatically;
+      -- start treesitter per-buffer for any filetype that has a parser.
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter_highlight", { clear = true }),
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
     end,
   },
 }
